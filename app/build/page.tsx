@@ -90,14 +90,14 @@ const PIZZA_PHOTOS: Record<string, string> = {
 };
 
 const TOPPING_PHOTOS: Record<string, string> = {
-  mushroom:    "https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=200&h=200&fit=crop&q=80",
-  peppers:     "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=200&h=200&fit=crop&q=80",
-  onion:       "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200&h=200&fit=crop&q=80",
-  olives:      "https://images.unsplash.com/photo-1550583724-b2fd6c65b3fa?w=200&h=200&fit=crop&q=80",
-  corn:        "https://images.unsplash.com/photo-1508313880080-c4bef0730395?w=200&h=200&fit=crop&q=80",
-  artichoke:   "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=200&h=200&fit=crop&q=80",
-  spinach:     "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=200&h=200&fit=crop&q=80",
-  sun_tomato:  "https://images.unsplash.com/photo-1592924357228-91a4daadcfad?w=200&h=200&fit=crop&q=80",
+  mushroom:    "https://images.unsplash.com/photo-1630286057323-905c2a21941f?w=200&h=200&fit=crop&q=80",
+  peppers:     "https://images.unsplash.com/photo-1601648764658-cf37e8c89b70?w=200&h=200&fit=crop&q=80",
+  onion:       "https://images.unsplash.com/photo-1507633698035-8e4bd1573e09?w=200&h=200&fit=crop&q=80",
+  olives:      "https://images.unsplash.com/photo-1683543121487-b718fa4f8bd1?w=200&h=200&fit=crop&q=80",
+  corn:        "https://images.unsplash.com/photo-1578652903016-b78571b87410?w=200&h=200&fit=crop&q=80",
+  artichoke:   "https://images.unsplash.com/photo-1729293058711-b16fd6ee1074?w=200&h=200&fit=crop&q=80",
+  spinach:     "https://images.unsplash.com/photo-1578283326173-fbb0f83b59b2?w=200&h=200&fit=crop&q=80",
+  sun_tomato:  "https://images.unsplash.com/photo-1760445530747-56a32103b672?w=200&h=200&fit=crop&q=80",
   chicken:     "https://images.unsplash.com/photo-1555041469-149851eb6889?w=200&h=200&fit=crop&q=80",
   beef:        "https://images.unsplash.com/photo-1529694157872-4f96b461e4e6?w=200&h=200&fit=crop&q=80",
   tuna:        "https://images.unsplash.com/photo-1519708227418-a2f55f75e1fd?w=200&h=200&fit=crop&q=80",
