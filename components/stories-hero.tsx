@@ -217,12 +217,7 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
         <span className="text-[9px] tracking-[0.3em] text-white/60 uppercase">גלול</span>
       </div>
 
-      {/* Pause on hover — toggle */}
-      <div
-        className="absolute inset-0 z-[25]"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      />
+      {/* No pause on hover — slider keeps moving regardless of cursor */}
     </section>
   );
 }

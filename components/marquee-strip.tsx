@@ -3,7 +3,7 @@ const ITEMS = [
   { text: "₪50 מרגריטה",         highlight: true  },
   { text: "מוכן מהלב",           highlight: false },
   { text: "פסטה ביתית",          highlight: false },
-  { text: "כשר למהדרין",         highlight: true  },
+  { text: "כשר חלבי",            highlight: true  },
   { text: "קריית ים",            highlight: false },
   { text: "טרי כל יום",          highlight: false },
   { text: "₪65 פיצת שף",         highlight: true  },
@@ -20,11 +20,11 @@ const ITEMS = [
 function Separator({ green }: { green?: boolean }) {
   return (
     <svg
-      width="16"
-      height="16"
+      width="14"
+      height="14"
       viewBox="0 0 16 16"
       fill="none"
-      className="mx-4 shrink-0 opacity-70"
+      className="mx-6 shrink-0 opacity-60"
       aria-hidden="true"
     >
       <path
@@ -35,11 +35,34 @@ function Separator({ green }: { green?: boolean }) {
   );
 }
 
-export function MarqueeStrip() {
-  const repeated = [...ITEMS, ...ITEMS, ...ITEMS, ...ITEMS];
-
+/* Render one full pass of all items */
+function ItemRow() {
   return (
-    <div className="overflow-hidden" style={{borderBottom: "2px solid #2E7D32"}}>
+    <>
+      {ITEMS.map((item, i) => (
+        <span key={i} className="inline-flex items-center">
+          <span
+            className={`text-sm font-bold tracking-widest uppercase ${
+              item.highlight ? "text-white" : "text-white/70"
+            }`}
+            style={{ fontFamily: "var(--font-rubik)", fontWeight: item.highlight ? 700 : 500 }}
+          >
+            {item.text}
+          </span>
+          <Separator green={i % 5 === 2} />
+        </span>
+      ))}
+    </>
+  );
+}
+
+export function MarqueeStrip() {
+  return (
+    <div
+      className="overflow-hidden"
+      style={{ borderBottom: "2px solid #2E7D32" }}
+      aria-hidden="true"
+    >
       <div
         className="py-4"
         style={{
@@ -48,27 +71,22 @@ export function MarqueeStrip() {
           animation: "shimmer 6s linear infinite",
         }}
       >
-        <div className="flex whitespace-nowrap" style={{ width: "max-content" }} dir="ltr">
-          <div
-            className="flex whitespace-nowrap"
-            style={{ animation: "marquee 45s linear infinite" }}
-          >
-            {repeated.map((item, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center"
-              >
-                <span
-                  className={`text-sm font-bold tracking-widest uppercase ${
-                    item.highlight ? "text-white" : "text-white/75"
-                  }`}
-                  style={{ fontFamily: "var(--font-rubik)", fontWeight: item.highlight ? 700 : 500 }}
-                >
-                  {item.text}
-                </span>
-                <Separator green={i % 4 === 2} />
-              </span>
-            ))}
+        {/* Two identical halves — animates exactly -50% so loop is seamless */}
+        <div
+          className="flex whitespace-nowrap"
+          style={{
+            width: "max-content",
+            animation: "marquee 50s linear infinite",
+          }}
+          dir="ltr"
+        >
+          {/* Half 1 */}
+          <div className="flex whitespace-nowrap">
+            <ItemRow />
+          </div>
+          {/* Half 2 — identical, ensures nothing is ever empty on reset */}
+          <div className="flex whitespace-nowrap">
+            <ItemRow />
           </div>
         </div>
       </div>
