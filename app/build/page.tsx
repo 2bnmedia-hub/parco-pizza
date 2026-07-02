@@ -36,30 +36,34 @@ const CHEESES = {
 } as const;
 type CheeseKey = keyof typeof CHEESES;
 
-interface ToppingDef { label: string; price: number; color: string; emoji: string; vegan?: boolean; }
+interface ToppingDef { label: string; price: number; color: string; emoji: string; }
 const TOPPINGS: Record<string, ToppingDef> = {
-  mushroom:    { label: "פטריות",           price: 5,  color: "#8B5A2B", emoji: "🍄" },
-  peppers:     { label: "פלפלים",           price: 5,  color: "#E63946", emoji: "🫑" },
-  onion:       { label: "בצל",              price: 5,  color: "#C0A0B8", emoji: "🧅" },
-  olives:      { label: "זיתים",            price: 5,  color: "#1C2E10", emoji: "🫒", vegan: true },
-  corn:        { label: "תירס",             price: 5,  color: "#E8B820", emoji: "🌽", vegan: true },
-  artichoke:   { label: "ארטישוק",          price: 7,  color: "#5A8845", emoji: "🌿", vegan: true },
-  spinach:     { label: "תרד",              price: 5,  color: "#2D6A4F", emoji: "🥬", vegan: true },
-  sun_tomato:  { label: "עגבניות מיובשות", price: 7,  color: "#922B00", emoji: "🍅", vegan: true },
-  chicken:     { label: "עוף",              price: 9,  color: "#C4844A", emoji: "🍗" },
-  beef:        { label: "בשר טחון",         price: 11, color: "#8B2020", emoji: "🥩" },
-  tuna:        { label: "טונה",             price: 9,  color: "#4A7FB5", emoji: "🐟" },
-  salami:      { label: "סלמי",             price: 9,  color: "#8B1A2A", emoji: "🥓" },
-  pepperoni:   { label: "פפרוני",           price: 10, color: "#C41E2A", emoji: "🍕" },
-  truffle:     { label: "שמן טרופל",        price: 15, color: "#3A2820", emoji: "🍄", vegan: true },
-  caramelized: { label: "בצל מקורמל",      price: 8,  color: "#C4820A", emoji: "🧅", vegan: true },
-  garlic:      { label: "שום קלוי",         price: 6,  color: "#C8B880", emoji: "🧄", vegan: true },
+  // ── רגילות (מחיר לפי גודל: אישי ₪2 / בינוני ₪4 / גדול ₪8) ──
+  green_olives:  { label: "זיתים ירוקים",    price: 4, color: "#4A7A3C", emoji: "🫒" },
+  mushroom:      { label: "פטריות טריות",    price: 4, color: "#8B5A2B", emoji: "🍄" },
+  bulgari:       { label: "בולגרית",         price: 4, color: "#BDB8A8", emoji: "🧀" },
+  corn:          { label: "תירס",             price: 4, color: "#E8B820", emoji: "🌽" },
+  tuna:          { label: "טונה",             price: 4, color: "#4A7FB5", emoji: "🐟" },
+  red_onion:     { label: "בצל סגול",        price: 4, color: "#8B4580", emoji: "🧅" },
+  hot_pepper:    { label: "פלפל חריף",       price: 4, color: "#CC2222", emoji: "🌶️" },
+  shipka:        { label: "שיפקה",           price: 4, color: "#B8341C", emoji: "🌶️" },
+  gamba:         { label: "גמבה",            price: 4, color: "#D4882A", emoji: "🫑" },
+  hard_egg:      { label: "ביצה קשה",        price: 4, color: "#F5C842", emoji: "🥚" },
+  pesto:         { label: "פסטו",            price: 4, color: "#2D6A4F", emoji: "🌿" },
+  // ── פרימיום (מחיר לפי גודל: אישי ₪4 / בינוני ₪8 / גדול ₪10) ──
+  kalamata:      { label: "זיתי קלמטה",     price: 8, color: "#3D2060", emoji: "🫒" },
+  garlic_confit: { label: "קונפי שום",       price: 8, color: "#C8B458", emoji: "🧄" },
+  caramelized:   { label: "בצל מקורמל",     price: 8, color: "#C4820A", emoji: "🧅" },
+  cherry_tomato: { label: "עגבניות שרי",    price: 8, color: "#CC3322", emoji: "🍅" },
+  sun_tomato:    { label: "עגבניות מיובשות",price: 8, color: "#922B00", emoji: "🍅" },
+  parmesan:      { label: "פרמז'ן",         price: 8, color: "#F0D050", emoji: "🧀" },
+  pineapple:     { label: "אננס",            price: 8, color: "#F0B820", emoji: "🍍" },
+  anchovy:       { label: "אנשובי",          price: 8, color: "#7A5030", emoji: "🐟" },
 };
 
 const TOPPING_CATEGORIES = {
-  veggies:  { label: "ירקות",   keys: ["mushroom","peppers","onion","olives","corn","artichoke","spinach","sun_tomato"] },
-  proteins: { label: "חלבונים", keys: ["chicken","beef","tuna","salami","pepperoni"] },
-  premium:  { label: "פרמיום",  keys: ["truffle","caramelized","garlic"] },
+  regular: { label: "רגילות",  keys: ["green_olives","mushroom","bulgari","corn","tuna","red_onion","hot_pepper","shipka","gamba","hard_egg","pesto"] },
+  premium: { label: "פרימיום", keys: ["kalamata","garlic_confit","caramelized","cherry_tomato","sun_tomato","parmesan","pineapple","anchovy"] },
 };
 
 const UPSELLS = {
@@ -90,22 +94,27 @@ const PIZZA_PHOTOS: Record<string, string> = {
 };
 
 const TOPPING_PHOTOS: Record<string, string> = {
-  mushroom:    "https://images.unsplash.com/photo-1630286057323-905c2a21941f?w=200&h=200&fit=crop&q=80",
-  peppers:     "https://images.unsplash.com/photo-1601648764658-cf37e8c89b70?w=200&h=200&fit=crop&q=80",
-  onion:       "https://images.unsplash.com/photo-1507633698035-8e4bd1573e09?w=200&h=200&fit=crop&q=80",
-  olives:      "https://images.unsplash.com/photo-1683543121487-b718fa4f8bd1?w=200&h=200&fit=crop&q=80",
-  corn:        "https://images.unsplash.com/photo-1578652903016-b78571b87410?w=200&h=200&fit=crop&q=80",
-  artichoke:   "https://images.unsplash.com/photo-1729293058711-b16fd6ee1074?w=200&h=200&fit=crop&q=80",
-  spinach:     "https://images.unsplash.com/photo-1578283326173-fbb0f83b59b2?w=200&h=200&fit=crop&q=80",
-  sun_tomato:  "https://images.unsplash.com/photo-1760445530747-56a32103b672?w=200&h=200&fit=crop&q=80",
-  chicken:     "https://images.unsplash.com/photo-1555041469-149851eb6889?w=200&h=200&fit=crop&q=80",
-  beef:        "https://images.unsplash.com/photo-1529694157872-4f96b461e4e6?w=200&h=200&fit=crop&q=80",
-  tuna:        "https://images.unsplash.com/photo-1519708227418-a2f55f75e1fd?w=200&h=200&fit=crop&q=80",
-  salami:      "https://images.unsplash.com/photo-1601924638867-3a6de6b7a500?w=200&h=200&fit=crop&q=80",
-  pepperoni:   "https://images.unsplash.com/photo-1574068468668-a05a1abb3d59?w=200&h=200&fit=crop&q=80",
-  truffle:     "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&h=200&fit=crop&q=80",
-  caramelized: "https://images.unsplash.com/photo-1587659335235-5f6a8a79dd34?w=200&h=200&fit=crop&q=80",
-  garlic:      "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=200&h=200&fit=crop&q=80",
+  // רגילות
+  green_olives:  "https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=200&h=200&fit=crop&q=80",
+  mushroom:      "https://images.unsplash.com/photo-1630286057323-905c2a21941f?w=200&h=200&fit=crop&q=80",
+  bulgari:       "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=200&h=200&fit=crop&q=80",
+  corn:          "https://images.unsplash.com/photo-1578652903016-b78571b87410?w=200&h=200&fit=crop&q=80",
+  tuna:          "https://images.unsplash.com/photo-1519708227418-a2f55f75e1fd?w=200&h=200&fit=crop&q=80",
+  red_onion:     "https://images.unsplash.com/photo-1580201092675-a0a6a6cafbb1?w=200&h=200&fit=crop&q=80",
+  hot_pepper:    "https://images.unsplash.com/photo-1588252303782-cb80119abd6e?w=200&h=200&fit=crop&q=80",
+  shipka:        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&h=200&fit=crop&q=80",
+  gamba:         "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&h=200&fit=crop&q=80",
+  hard_egg:      "https://images.unsplash.com/photo-1607690424560-35d1ef8d0e81?w=200&h=200&fit=crop&q=80",
+  pesto:         "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?w=200&h=200&fit=crop&q=80",
+  // פרימיום
+  kalamata:      "https://images.unsplash.com/photo-1683543121487-b718fa4f8bd1?w=200&h=200&fit=crop&q=80",
+  garlic_confit: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=200&h=200&fit=crop&q=80",
+  caramelized:   "https://images.unsplash.com/photo-1587659335235-5f6a8a79dd34?w=200&h=200&fit=crop&q=80",
+  cherry_tomato: "https://images.unsplash.com/photo-1561136594-7f68413baa99?w=200&h=200&fit=crop&q=80",
+  sun_tomato:    "https://images.unsplash.com/photo-1760445530747-56a32103b672?w=200&h=200&fit=crop&q=80",
+  parmesan:      "https://images.unsplash.com/photo-1618164436241-4473940d1f5c?w=200&h=200&fit=crop&q=80",
+  pineapple:     "https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?w=200&h=200&fit=crop&q=80",
+  anchovy:       "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=200&h=200&fit=crop&q=80",
 };
 
 const SAUCE_PHOTOS: Record<string, string> = {
@@ -283,7 +292,7 @@ export default function BuildPage() {
   const [sauce,    setSauce]    = useState<SauceKey>("tomato");
   const [cheese,   setCheese]   = useState<CheeseKey>("mozzarella");
   const [toppings, setToppings] = useState<string[]>([]);
-  const [activeTab, setActiveTab] = useState<keyof typeof TOPPING_CATEGORIES>("veggies");
+  const [activeTab, setActiveTab] = useState<keyof typeof TOPPING_CATEGORIES>("regular");
   const [pizzaName, setPizzaName] = useState("");
   const [showUpsell, setShowUpsell] = useState(false);
   const [added, setAdded] = useState(false);
@@ -472,10 +481,13 @@ export default function BuildPage() {
 
           {/* Toppings */}
           <div className="rounded-3xl p-6 bg-white border border-pp-border">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-1">
               <h2 className="font-black text-lg text-pp-dark" style={{fontFamily:"var(--font-rubik)"}}>תוספות</h2>
               <span className="text-xs text-pp-muted">{toppings.length} נבחרו</span>
             </div>
+            <p className="text-[11px] text-pp-muted mb-4">
+              רגילות: ₪2/4/8 | פרימיום: ₪4/8/10 — (אישי / בינוני / גדול)
+            </p>
 
             {/* Category tabs */}
             <div className="flex gap-2 mb-4">
