@@ -179,7 +179,7 @@ export function Footer({ setOrderOpen }: FooterProps) {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[11px] text-pp-muted/40 underline-offset-2 transition-colors hover:text-pp-muted/70 hover:underline"
+                className="text-[11px] text-white/50 underline-offset-2 transition-colors hover:text-white/80 hover:underline"
               >
                 {l.label}
               </a>
@@ -187,10 +187,10 @@ export function Footer({ setOrderOpen }: FooterProps) {
           </nav>
           {/* Copyright row */}
           <div className="flex flex-col items-center justify-between gap-1.5 text-center md:flex-row">
-            <p className="text-[11px] text-pp-muted/40">
+            <p className="text-[11px] text-white/50">
               © {year} פארקו פיצה. כל הזכויות שמורות.
             </p>
-            <p className="text-[11px] text-pp-muted/40">
+            <p className="text-[11px] text-white/50">
               עיצוב ופיתוח:{" "}
               <a
                 href="https://2bnmedia.com"
