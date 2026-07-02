@@ -142,34 +142,34 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
       </div>
 
       {/* Center content */}
-      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center px-6 text-center pointer-events-none gap-7">
+      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center px-5 text-center pointer-events-none gap-5 md:gap-7">
         <p
           key={`sub-${current}`}
-          className="text-sm tracking-[0.5em] text-pp-yellow uppercase animate-fade-in"
+          className="text-[10px] md:text-sm tracking-[0.4em] md:tracking-[0.5em] text-pp-yellow uppercase animate-fade-in"
         >
           {slide.sub}
         </p>
         <h1
           key={`title-${current}`}
-          className="text-5xl font-black text-white animate-fade-up md:text-7xl lg:text-8xl"
+          className="text-[2.5rem] leading-[1.1] font-black text-white animate-fade-up md:text-7xl lg:text-8xl"
           style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
         >
           {slide.title}
         </h1>
         <div
           key={`cta-${current}`}
-          className="flex flex-wrap justify-center gap-4 pointer-events-auto animate-fade-up"
+          className="flex flex-col sm:flex-row justify-center gap-3 pointer-events-auto animate-fade-up w-full max-w-[280px] sm:max-w-none"
           style={{ animationDelay: "0.2s" }}
         >
           <button
             onClick={() => setOrderOpen(true)}
-            className="btn-primary px-8 py-3.5 text-sm tracking-widest uppercase"
+            className="btn-primary px-7 py-4 text-sm tracking-widest uppercase"
           >
             הזמינו עכשיו
           </button>
           <a
             href="/#menu"
-            className="btn-outline-white px-8 py-3.5 text-sm tracking-widest uppercase"
+            className="btn-outline-white px-7 py-4 text-sm tracking-widest uppercase"
           >
             לתפריט
           </a>

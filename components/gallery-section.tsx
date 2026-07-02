@@ -46,16 +46,16 @@ const PHOTOS: Photo[] = [
 
 export function GallerySection() {
   return (
-    <section id="gallery" className="py-24 md:py-32" style={{ background: "#111827" }}>
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="gallery" className="py-14 md:py-28" style={{ background: "#111827" }}>
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
 
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 md:mb-16 text-center">
           <ScrollReveal>
             <p className="mb-3 text-xs tracking-[0.4em] text-pp-orange uppercase">Gallery</p>
           </ScrollReveal>
           <ScrollReveal className="reveal-d2">
-            <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
+            <h2 className="font-display text-3xl font-bold text-white md:text-5xl">
               טעם שנראה טוב
             </h2>
           </ScrollReveal>

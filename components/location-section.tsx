@@ -146,7 +146,7 @@ export function LocationSection() {
 
           {/* Map — 3/5 width on desktop */}
           <ScrollReveal className="reveal-d2 lg:col-span-3">
-            <div className="relative overflow-hidden rounded-2xl" style={{ height: "min(420px, 60vw)", minHeight: "280px" }}>
+            <div className="relative overflow-hidden rounded-2xl" style={{ height: "clamp(260px, 55vw, 440px)" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3388.0!2d35.07!3d32.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDQ5JzU4LjAiTiAzNcKwMDQnMTIuMCJF!5e0!3m2!1siw!2sil!4v1700000000000!5m2!1siw!2sil"
                 width="100%"

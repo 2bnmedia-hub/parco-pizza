@@ -44,7 +44,7 @@ export function Footer({ setOrderOpen }: FooterProps) {
 
       {/* Main grid */}
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
 
           {/* Logo + About */}
           <div className="flex flex-col gap-5 lg:col-span-1">

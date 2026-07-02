@@ -163,15 +163,15 @@ export function MenuSection() {
   return (
     <section
       id="menu"
-      className="py-24 md:py-32 overflow-hidden"
+      className="py-14 md:py-24 lg:py-32 overflow-hidden"
       style={{
         background: "linear-gradient(160deg, #FFF3D5 0%, #FFF8E7 50%, #FFF3D5 100%)",
       }}
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
 
         {/* Header */}
-        <div className="mb-14 text-center">
+        <div className="mb-10 md:mb-14 text-center">
           <ScrollReveal>
             <p className="mb-3 tracking-[0.5em] text-pp-red uppercase font-bebas text-base">
               Our Menu — התפריט שלנו
@@ -179,7 +179,7 @@ export function MenuSection() {
           </ScrollReveal>
           <ScrollReveal className="reveal-d2">
             <h2
-              className="relative inline-block text-4xl font-black text-pp-dark md:text-5xl lg:text-6xl"
+              className="relative inline-block text-3xl font-black text-pp-dark md:text-5xl lg:text-6xl"
               style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
             >
               מה יוצא היום
@@ -194,14 +194,15 @@ export function MenuSection() {
 
         {/* Category tabs */}
         <ScrollReveal className="reveal-d4">
-          <div className="mb-10 flex flex-wrap justify-center gap-3.5">
+          <div className="mb-8 md:mb-10 -mx-4 md:mx-0">
+            <div className="flex overflow-x-auto gap-2.5 px-4 pb-2 md:flex-wrap md:justify-center md:gap-3.5 md:px-0 md:pb-0 scrollbar-hide">
             {CATEGORIES.map((cat) => {
               const isActive = cat.key === activeKey;
               return (
                 <button
                   key={cat.key}
                   onClick={() => setActiveKey(cat.key)}
-                  className={`flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold tracking-wide transition-all duration-300 ${
+                  className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 md:px-6 md:py-3 text-sm font-bold tracking-wide transition-all duration-300 ${
                     isActive
                       ? "bg-pp-red text-white shadow-lg shadow-pp-red/30 scale-105"
                       : "bg-white text-pp-muted border border-pp-border hover:border-pp-red hover:text-pp-red hover:shadow-md"
@@ -213,11 +214,12 @@ export function MenuSection() {
                 </button>
               );
             })}
+            </div>
           </div>
         </ScrollReveal>
 
         {/* Menu items grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {activeCategory.items.map((item, i) => (
             <div
               key={item.name}

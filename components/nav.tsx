@@ -84,7 +84,7 @@ export function Nav({ setOrderOpen }: NavProps) {
             </div>
             <div className="flex flex-col leading-none gap-0.5">
               <span
-                className="font-black text-[1.7rem] tracking-tight text-pp-dark transition-colors group-hover:text-pp-red"
+                className="font-black text-[1.35rem] md:text-[1.7rem] tracking-tight text-pp-dark transition-colors group-hover:text-pp-red"
                 style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
               >
                 פארקו

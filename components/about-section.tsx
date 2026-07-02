@@ -114,19 +114,19 @@ function TagIcon({ children }: { children: React.ReactNode }) {
 
 export function AboutSection() {
   return (
-    <section id="about" className="bg-white py-24 md:py-32 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="about" className="bg-white py-14 md:py-24 lg:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
 
         {/* Stats row */}
-        <div className="mb-20 grid grid-cols-3 gap-4 max-w-2xl mx-auto w-full">
+        <div className="mb-12 md:mb-20 grid grid-cols-3 gap-2 md:gap-4 max-w-2xl mx-auto w-full">
           {STATS.map((s, i) => (
             <ScrollReveal key={s.label} className={`reveal-d${i + 1}`}>
-              <div className="card-premium group rounded-2xl bg-gradient-to-br from-pp-surface to-white border border-pp-border/60 p-6 text-center shadow-sm">
+              <div className="card-premium group rounded-xl md:rounded-2xl bg-gradient-to-br from-pp-surface to-white border border-pp-border/60 p-4 md:p-6 text-center shadow-sm">
                 <div className="stat-icon-wrap mb-4 flex justify-center">
                   <s.Icon />
                 </div>
                 <p
-                  className="text-3xl font-black text-pp-red md:text-4xl"
+                  className="text-2xl font-black text-pp-red md:text-4xl"
                   style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
                 >
                   <AnimatedCounter value={s.value} suffix={s.suffix} decimal={s.decimal} />
@@ -138,7 +138,7 @@ export function AboutSection() {
         </div>
 
         {/* Main about grid */}
-        <div className="grid gap-16 md:grid-cols-2 md:gap-20 lg:items-center">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-20 lg:items-center">
 
           {/* Image column */}
           <ScrollReveal className="reveal-d1">
@@ -192,7 +192,7 @@ export function AboutSection() {
 
             <ScrollReveal className="reveal-d2">
               <h2
-                className="text-4xl font-black leading-tight text-pp-dark md:text-5xl lg:text-6xl"
+                className="text-3xl font-black leading-tight text-pp-dark md:text-5xl lg:text-6xl"
                 style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
               >
                 מוכן מהלב,

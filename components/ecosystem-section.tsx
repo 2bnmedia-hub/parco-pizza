@@ -130,12 +130,12 @@ const FEATURES = [
 
 export function EcosystemSection() {
   return (
-    <section className="py-24 md:py-32 px-6 bg-pp-surface">
+    <section className="py-14 md:py-28 px-4 md:px-6 bg-pp-surface">
       <div className="mx-auto max-w-7xl">
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-pp-muted tracking-[0.5em] uppercase font-bebas text-sm mb-3">Digital Ecosystem</p>
-            <h2 className="font-black text-4xl md:text-5xl text-pp-dark" style={{fontFamily:"var(--font-rubik)",fontWeight:900}}>
+            <h2 className="font-black text-3xl md:text-5xl text-pp-dark" style={{fontFamily:"var(--font-rubik)",fontWeight:900}}>
               עוד הרבה יותר מפיצה
             </h2>
             <p className="mt-4 text-pp-muted max-w-xl mx-auto">

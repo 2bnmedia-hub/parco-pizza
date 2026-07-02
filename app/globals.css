@@ -457,3 +457,19 @@ footer :focus-visible {
 .chat-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(46, 125, 50, 0.6);
 }
+
+/* ── Hide scrollbar (tabs, carousels) ─────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Mobile safe area padding ─────────────────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
