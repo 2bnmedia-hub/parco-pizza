@@ -85,7 +85,7 @@ const UPSELLS = {
 const PIZZA_PHOTOS: Record<string, string> = {
   tomato: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&h=500&fit=crop&q=85",
   cream:  "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=500&h=500&fit=crop&q=85",
-  pesto:  "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&h=500&fit=crop&q=85",
+  pesto:  "https://images.unsplash.com/photo-1666111774732-766a3ec30313?w=500&h=500&fit=crop&q=85",
   bbq:    "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&h=500&fit=crop&q=85",
 };
 
@@ -111,7 +111,7 @@ const TOPPING_PHOTOS: Record<string, string> = {
 const SAUCE_PHOTOS: Record<string, string> = {
   tomato: "https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=80&h=80&fit=crop&q=80",
   cream:  "https://images.unsplash.com/photo-1547592180-85f173990554?w=80&h=80&fit=crop&q=80",
-  pesto:  "https://images.unsplash.com/photo-1694849506823-23a00e1e7553?w=80&h=80&fit=crop&q=80",
+  pesto:  "https://images.unsplash.com/photo-1780541027382-cf422369bdaa?w=80&h=80&fit=crop&q=80",
   bbq:    "https://images.unsplash.com/photo-1528712306091-ed0763094c98?w=80&h=80&fit=crop&q=80",
 };
 

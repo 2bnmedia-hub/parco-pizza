@@ -41,7 +41,7 @@ export function Footer({ setOrderOpen }: FooterProps) {
     <footer className="section-dark-ambient">
 
       {/* Top accent line */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-pp-red to-transparent" />
+      <div className="h-[3px] w-full" style={{background:"linear-gradient(90deg, transparent, #2D6A4F 20%, #E63946 50%, #2D6A4F 80%, transparent)"}} />
 
       {/* Main grid */}
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">

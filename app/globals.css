@@ -11,7 +11,9 @@
   --color-pp-dark:     #1A0806;
   --color-pp-muted:    #8B6347;
   --color-pp-border:   #F0D8C0;
-  --color-pp-green:    #2D6A4F;
+  --color-pp-green:       #2D6A4F;
+  --color-pp-green-light: #52B788;
+  --color-pp-green-pale:  #D8F3DC;
 
   /* ── Legacy brand colors ────────────────────────────── */
   --color-brand-dark:    #fafaf8;
@@ -341,7 +343,7 @@ body::after {
   right: 0;
   width: 0;
   height: 1.5px;
-  background: #E63946;
+  background: linear-gradient(90deg, #52B788, #2D6A4F);
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .nav-link:hover::after {

@@ -17,19 +17,19 @@ const ITEMS = [
   { text: "04-6778900",          highlight: true  },
 ];
 
-function Separator() {
+function Separator({ green }: { green?: boolean }) {
   return (
     <svg
       width="16"
       height="16"
       viewBox="0 0 16 16"
       fill="none"
-      className="mx-4 shrink-0 opacity-60"
+      className="mx-4 shrink-0 opacity-70"
       aria-hidden="true"
     >
       <path
         d="M8 1L9.96 5.5H15L10.94 8.5L12.47 13L8 10.27L3.53 13L5.06 8.5L1 5.5H6.04L8 1Z"
-        fill="white"
+        fill={green ? "#D8F3DC" : "white"}
       />
     </svg>
   );
@@ -39,35 +39,37 @@ export function MarqueeStrip() {
   const repeated = [...ITEMS, ...ITEMS, ...ITEMS, ...ITEMS];
 
   return (
-    <div
-      className="overflow-hidden py-4"
-      style={{
-        background: "linear-gradient(135deg, #E63946 0%, #c8303c 50%, #E63946 100%)",
-        backgroundSize: "200% auto",
-        animation: "shimmer 6s linear infinite",
-      }}
-    >
-      <div className="flex whitespace-nowrap" style={{ width: "max-content" }} dir="ltr">
-        <div
-          className="flex whitespace-nowrap"
-          style={{ animation: "marquee 45s linear infinite" }}
-        >
-          {repeated.map((item, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center"
-            >
+    <div className="overflow-hidden" style={{borderBottom: "2px solid #2D6A4F"}}>
+      <div
+        className="py-4"
+        style={{
+          background: "linear-gradient(135deg, #E63946 0%, #c8303c 50%, #E63946 100%)",
+          backgroundSize: "200% auto",
+          animation: "shimmer 6s linear infinite",
+        }}
+      >
+        <div className="flex whitespace-nowrap" style={{ width: "max-content" }} dir="ltr">
+          <div
+            className="flex whitespace-nowrap"
+            style={{ animation: "marquee 45s linear infinite" }}
+          >
+            {repeated.map((item, i) => (
               <span
-                className={`text-sm font-bold tracking-widest uppercase ${
-                  item.highlight ? "text-white" : "text-white/75"
-                }`}
-                style={{ fontFamily: "var(--font-rubik)", fontWeight: item.highlight ? 700 : 500 }}
+                key={i}
+                className="inline-flex items-center"
               >
-                {item.text}
+                <span
+                  className={`text-sm font-bold tracking-widest uppercase ${
+                    item.highlight ? "text-white" : "text-white/75"
+                  }`}
+                  style={{ fontFamily: "var(--font-rubik)", fontWeight: item.highlight ? 700 : 500 }}
+                >
+                  {item.text}
+                </span>
+                <Separator green={i % 4 === 2} />
               </span>
-              <Separator />
-            </span>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
