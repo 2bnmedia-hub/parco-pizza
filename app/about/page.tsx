@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const VALUES = [
   { icon: "🌿", title: "טריות",     desc: "חומרי גלם טריים בכל יום, ללא פשרות" },
   { icon: "❤️", title: "אהבה",      desc: "כל מנה מוכנת עם תשומת לב ואכפתיות"  },
-  { icon: "✡️", title: "כשר חלב",   desc: "כשרות מלאה — מוצרי חלב בלבד"        },
+  { icon: "✡️", title: "כשר חלבי",   desc: "כשרות מלאה — מוצרי חלב בלבד"        },
   { icon: "🍕", title: "מגוון",     desc: "תפריט עשיר לכל טעם וכל גיל"         },
 ];
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 </ScrollReveal>
                 <ScrollReveal className="reveal-d5">
                   <p className="text-brand-muted leading-relaxed">
-                    המטבח שלנו כשר חלב — אנחנו מתמחים בפיצות יצירתיות עם גבינות מובחרות,
+                    המטבח שלנו כשר חלבי — אנחנו מתמחים בפיצות יצירתיות עם גבינות מובחרות,
                     פסטה ביתית עם רטבים עשירים, ומגוון קינוחים ייחודיים שתשמחו לנסות.
                     כל מנה מוכנת בהזמנה, טרי ועם לב.
                   </p>

@@ -219,7 +219,7 @@ export function AboutSection() {
               <p className="text-pp-muted leading-relaxed text-[15px]">
                 אנחנו מאמינים שאוכל טוב מתחיל מחומרי גלם איכותיים וממתכונים אמיתיים.
                 בפארקו תמצאו את השילוב המושלם בין מטבח איטלקי קלאסי לטעמים ישראליים —
-                כשר חלב, נגיש, ומוכן עם לב.
+                כשר חלבי, נגיש, ומוכן עם לב.
               </p>
             </ScrollReveal>
 
@@ -248,7 +248,7 @@ export function AboutSection() {
                     <path d="M7 1.5 L3 3.5 V7 C3 10 4.8 12.5 7 13.5 C9.2 12.5 11 10 11 7 V3.5 Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
                     <path d="M5 7 L6.5 8.5 L9.5 5.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  כשר חלב
+                  כשר חלבי
                 </span>
               </div>
             </ScrollReveal>

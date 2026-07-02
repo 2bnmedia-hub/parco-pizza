@@ -69,7 +69,7 @@ export function Footer({ setOrderOpen }: FooterProps) {
               טרי כל יום, מוכן מהלב.
             </p>
             <p className="text-xs text-pp-muted/50">
-              כשר חלב | גן אברהם, גאולה כהן 4
+              כשר חלבי | גן אברהם, גאולה כהן 4
             </p>
           </div>
 
