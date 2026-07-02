@@ -300,7 +300,7 @@ export function MenuSection() {
               <p className="mt-1.5 text-xs text-pp-muted leading-relaxed">{item.desc}</p>
 
               {/* Price */}
-              <div className="mt-4 flex items-baseline gap-1.5">
+              <div className="mt-4 flex items-baseline justify-end gap-1.5">
                 <span
                   className="text-xl text-pp-red"
                   style={{ fontFamily: "var(--font-rubik)", fontWeight: 500 }}
