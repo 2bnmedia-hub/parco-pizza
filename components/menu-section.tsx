@@ -19,57 +19,107 @@ interface Category {
 }
 
 function PizzaIcon({ active }: { active: boolean }) {
+  const c = active ? "white" : "currentColor";
+  const f = active ? "rgba(255,255,255,0.12)" : "none";
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-      <path d="M9 1.5L16 14.5H2Z" stroke={active ? "white" : "currentColor"} strokeWidth="1.4" strokeLinejoin="round" fill={active ? "rgba(255,255,255,0.15)" : "none"} />
-      <circle cx="9" cy="9.5" r="1.4" fill={active ? "white" : "currentColor"} />
-      <circle cx="6.5" cy="11.5" r="1" fill={active ? "white" : "currentColor"} opacity="0.7" />
-      <circle cx="11.5" cy="11.5" r="1" fill={active ? "white" : "currentColor"} opacity="0.7" />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+      {/* Outer pizza circle */}
+      <circle cx="10" cy="10" r="8" stroke={c} strokeWidth="1.4" fill={f} />
+      {/* 3 slice cuts */}
+      <line x1="10" y1="10" x2="10" y2="2" stroke={c} strokeWidth="1.1" strokeOpacity="0.65" />
+      <line x1="10" y1="10" x2="16.9" y2="14" stroke={c} strokeWidth="1.1" strokeOpacity="0.65" />
+      <line x1="10" y1="10" x2="3.1" y2="14" stroke={c} strokeWidth="1.1" strokeOpacity="0.65" />
+      {/* Thick crust arc at bottom */}
+      <path d="M3.1 14 Q10 18.5 16.9 14" stroke={c} strokeWidth="2.8" strokeLinecap="round" fill="none" />
+      {/* Toppings */}
+      <circle cx="10" cy="6.5" r="1.5" fill={c} />
+      <circle cx="6.8" cy="12.5" r="1.1" fill={c} />
+      <circle cx="13.2" cy="12.5" r="1.1" fill={c} />
     </svg>
   );
 }
 
 function PastaIcon({ active }: { active: boolean }) {
   const c = active ? "white" : "currentColor";
+  const f = active ? "rgba(255,255,255,0.1)" : "none";
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-      <path d="M2 9C2 5.7 5 3 9 3S16 5.7 16 9" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M3.5 11.5C3.5 9.5 6 8.5 9 8.5S14.5 9.5 14.5 11.5" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M5 14C5 12.5 6.8 12 9 12S13 12.5 13 14" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+      {/* Bowl */}
+      <path d="M3 9.5 Q3 16 10 16 Q17 16 17 9.5" stroke={c} strokeWidth="1.4" strokeLinecap="round" fill={f} />
+      <line x1="3" y1="9.5" x2="17" y2="9.5" stroke={c} strokeWidth="1.2" strokeLinecap="round" />
+      {/* Spaghetti swirls */}
+      <path d="M5.5 9.5 C5 8 7 7 8 8.5 C9 10 11.5 8.5 12 7" stroke={c} strokeWidth="1.2" strokeLinecap="round" fill="none" />
+      <path d="M7 9.5 C6.5 8.5 8 7.5 9 8.5 C10 9.5 12 8.5 12.5 7.5" stroke={c} strokeWidth="1" strokeLinecap="round" fill="none" strokeOpacity="0.7" />
+      {/* Fork (right side, leaning) */}
+      <line x1="15" y1="3.5" x2="14.2" y2="9.5" stroke={c} strokeWidth="1.3" strokeLinecap="round" />
+      <line x1="13.5" y1="3.5" x2="13.5" y2="6" stroke={c} strokeWidth="1.1" strokeLinecap="round" />
+      <line x1="15" y1="3.5" x2="15" y2="6" stroke={c} strokeWidth="1.1" strokeLinecap="round" />
+      <line x1="16.5" y1="3.5" x2="16.5" y2="6" stroke={c} strokeWidth="1.1" strokeLinecap="round" />
+      <path d="M13.5 6 Q15 6.5 16.5 6" stroke={c} strokeWidth="1" />
     </svg>
   );
 }
 
 function BreadIcon({ active }: { active: boolean }) {
   const c = active ? "white" : "currentColor";
+  const f = active ? "rgba(255,255,255,0.1)" : "none";
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-      <path d="M3 10C3 7 5.7 5 9 5S15 7 15 10V14H3V10Z" stroke={c} strokeWidth="1.4" strokeLinejoin="round" fill={active ? "rgba(255,255,255,0.1)" : "none"} />
-      <path d="M3 10H15" stroke={c} strokeWidth="1.4" />
-      <path d="M6 7.5 C6 6.5 7.5 6 9 6 S12 6.5 12 7.5" stroke={c} strokeWidth="1.2" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+      {/* Loaf body */}
+      <path d="M3 10.5 Q3 5.5 10 5.5 Q17 5.5 17 10.5 L17 15.5 Q17 16.5 16 16.5 L4 16.5 Q3 16.5 3 15.5 Z" stroke={c} strokeWidth="1.4" strokeLinejoin="round" fill={f} />
+      {/* Score line across domed top */}
+      <path d="M6 9.5 Q10 7.5 14 9.5" stroke={c} strokeWidth="1.2" strokeLinecap="round" fill="none" />
+      {/* Sesame/texture dots */}
+      <circle cx="7.5" cy="13" r="0.8" fill={c} fillOpacity="0.65" />
+      <circle cx="10" cy="13" r="0.8" fill={c} fillOpacity="0.65" />
+      <circle cx="12.5" cy="13" r="0.8" fill={c} fillOpacity="0.65" />
+      {/* Steam puffs */}
+      <path d="M7.5 5 Q8 3.5 7.5 2.5" stroke={c} strokeWidth="1.1" strokeLinecap="round" strokeOpacity="0.6" />
+      <path d="M12.5 5 Q13 3.5 12.5 2.5" stroke={c} strokeWidth="1.1" strokeLinecap="round" strokeOpacity="0.6" />
     </svg>
   );
 }
 
 function SaladIcon({ active }: { active: boolean }) {
   const c = active ? "white" : "currentColor";
+  const f = active ? "rgba(255,255,255,0.1)" : "none";
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-      <path d="M9 3 C9 3 6 5 5 8 S5 14 9 14 S13 11 12 8 S9 3 9 3Z" stroke={c} strokeWidth="1.3" strokeLinejoin="round" fill={active ? "rgba(255,255,255,0.1)" : "none"} />
-      <path d="M9 5 C8 7 8 9 9 11" stroke={c} strokeWidth="1.2" strokeLinecap="round" />
-      <path d="M3 13H15" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+      {/* Bowl */}
+      <path d="M3 10 Q3 16.5 10 16.5 Q17 16.5 17 10" stroke={c} strokeWidth="1.4" strokeLinecap="round" fill={f} />
+      <line x1="3" y1="10" x2="17" y2="10" stroke={c} strokeWidth="1.3" strokeLinecap="round" />
+      {/* Left leaf */}
+      <path d="M6.5 10 C6 8 7.5 6 8.5 8 C9 6.5 10.5 7 10 9.5" stroke={c} strokeWidth="1.2" strokeLinecap="round" fill="none" />
+      {/* Right leaf */}
+      <path d="M11 10 C10.5 8 12 6.5 12.5 8.5 C13.5 7 15 8 14 10" stroke={c} strokeWidth="1.2" strokeLinecap="round" fill="none" />
+      {/* Cherry tomato center */}
+      <circle cx="10" cy="8.5" r="1.4" fill={c} fillOpacity={active ? 1 : 0.85} />
+      {/* Tiny leaf on tomato */}
+      <path d="M10 7.1 C10 6.5 11 6 10.5 7.1" stroke={c} strokeWidth="0.9" strokeLinecap="round" fill="none" />
     </svg>
   );
 }
 
 function DessertIcon({ active }: { active: boolean }) {
   const c = active ? "white" : "currentColor";
+  const f = active ? "rgba(255,255,255,0.12)" : "none";
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-      <path d="M4 10H14L13 15H5Z" stroke={c} strokeWidth="1.3" strokeLinejoin="round" fill={active ? "rgba(255,255,255,0.1)" : "none"} />
-      <path d="M3 10 C3 7 5.5 5.5 9 5.5 S15 7 15 10" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M9 5.5 V3" stroke={c} strokeWidth="1.3" strokeLinecap="round" />
-      <circle cx="9" cy="2.5" r="1" fill={c} />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+      {/* Waffle cup */}
+      <path d="M6.5 12 L7.5 17 L12.5 17 L13.5 12 Z" stroke={c} strokeWidth="1.3" strokeLinejoin="round" fill={f} />
+      <line x1="6.5" y1="12" x2="13.5" y2="12" stroke={c} strokeWidth="1.2" strokeLinecap="round" />
+      {/* Waffle cross-hatch */}
+      <line x1="8" y1="12" x2="8.5" y2="17" stroke={c} strokeWidth="0.8" strokeOpacity="0.4" />
+      <line x1="10" y1="12" x2="10" y2="17" stroke={c} strokeWidth="0.8" strokeOpacity="0.4" />
+      <line x1="12" y1="12" x2="11.5" y2="17" stroke={c} strokeWidth="0.8" strokeOpacity="0.4" />
+      <line x1="6.8" y1="14" x2="13.2" y2="14" stroke={c} strokeWidth="0.8" strokeOpacity="0.4" />
+      {/* First gelato scoop */}
+      <path d="M6.5 12 C6.5 8.5 8 7 10 7 C12 7 13.5 8.5 13.5 12" stroke={c} strokeWidth="1.4" strokeLinecap="round" fill={active ? "rgba(255,255,255,0.15)" : "none"} />
+      {/* Scoop detail */}
+      <path d="M8 10 Q10 8.5 12 10" stroke={c} strokeWidth="1" strokeLinecap="round" fill="none" strokeOpacity="0.65" />
+      {/* Cherry on top */}
+      <circle cx="10" cy="5.5" r="1.3" fill={c} />
+      <path d="M10 4.2 C10 3 11.5 2.5 11.5 3.5" stroke={c} strokeWidth="1" strokeLinecap="round" fill="none" />
     </svg>
   );
 }
