@@ -95,20 +95,20 @@ const PIZZA_PHOTOS: Record<string, string> = {
 
 const TOPPING_PHOTOS: Record<string, string> = {
   // ── רגילות ──
-  green_olives:  "https://images.unsplash.com/photo-1591122523233-22037c1dec9f?w=200&h=200&fit=crop&q=80",  // זיתים ירוקים
+  green_olives:  "https://images.unsplash.com/photo-1634736482829-e2d431eda121?w=200&h=200&fit=crop&q=80",  // זיתים ירוקים
   mushroom:      "https://images.unsplash.com/photo-1552825898-07e419204683?w=200&h=200&fit=crop&q=80",  // פטריות טריות
   bulgari:       "https://images.unsplash.com/photo-1559561853-08451507cbe7?w=200&h=200&fit=crop&q=80",  // בולגרית/פטה
   corn:          "https://images.unsplash.com/photo-1578652903016-b78571b87410?w=200&h=200&fit=crop&q=80",  // תירס
-  tuna:          "https://images.unsplash.com/photo-1593969430155-d2b315c03c6d?w=200&h=200&fit=crop&q=80",  // טונה
-  red_onion:     "https://images.unsplash.com/photo-1580201092675-a0a6a6cafbb1?w=200&h=200&fit=crop&q=80",  // בצל סגול
+  tuna:          "https://images.unsplash.com/photo-1519708227418-a2f55f75e1fd?w=200&h=200&fit=crop&q=80",  // טונה
+  red_onion:     "https://images.unsplash.com/photo-1593629718894-e9a8f9f65d01?w=200&h=200&fit=crop&q=80",  // בצל סגול
   hot_pepper:    "https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?w=200&h=200&fit=crop&q=80",  // פלפל חריף
   shipka:        "https://images.unsplash.com/photo-1622993361024-ae1c39cda16c?w=200&h=200&fit=crop&q=80",  // שיפקה
-  gamba:         "https://images.unsplash.com/photo-1643594697632-e88176fb63fa?w=200&h=200&fit=crop&q=80",  // גמבה
+  gamba:         "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=200&h=200&fit=crop&q=80",  // גמבה
   hard_egg:      "https://images.unsplash.com/photo-1577111064880-4601019411fe?w=200&h=200&fit=crop&q=80",  // ביצה קשה
-  pesto:         "https://images.unsplash.com/photo-1519623286359-e9f3cbef015b?w=200&h=200&fit=crop&q=80",  // פסטו
+  pesto:         "https://images.unsplash.com/photo-1567610682680-daf96d0ffb75?w=200&h=200&fit=crop&q=80",  // פסטו
   // ── פרימיום ──
-  kalamata:      "https://images.unsplash.com/photo-1634657443172-efbae44fd04b?w=200&h=200&fit=crop&q=80",  // זיתי קלמטה
-  garlic_confit: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=200&h=200&fit=crop&q=80",  // קונפי שום
+  kalamata:      "https://images.unsplash.com/photo-1596099477998-880bc06e09f9?w=200&h=200&fit=crop&q=80",  // זיתי קלמטה
+  garlic_confit: "https://images.unsplash.com/photo-1693940748460-c2af653cf8a9?w=200&h=200&fit=crop&q=80",  // קונפי שום
   caramelized:   "https://images.unsplash.com/photo-1695089027936-465ca9835017?w=200&h=200&fit=crop&q=80",  // בצל מקורמל
   cherry_tomato: "https://images.unsplash.com/photo-1524593166156-312f362cada0?w=200&h=200&fit=crop&q=80",  // עגבניות שרי
   sun_tomato:    "https://images.unsplash.com/photo-1760445530747-56a32103b672?w=200&h=200&fit=crop&q=80",  // עגבניות מיובשות
