@@ -185,19 +185,14 @@ export function Footer({ setOrderOpen }: FooterProps) {
               </a>
             ))}
           </nav>
-          {/* Copyright row */}
-          <div className="flex flex-col items-center justify-between gap-1.5 text-center md:flex-row">
-            <p className="text-[11px] text-white/50">
-              © {year} פארקו פיצה. כל הזכויות שמורות.
-            </p>
+          {/* Copyright row — single line */}
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+            <p className="text-[11px] text-white/50">© {year} פארקו פיצה. כל הזכויות שמורות.</p>
+            <span className="text-white/20 text-[11px]">|</span>
             <p className="text-[11px] text-white/50">
               עיצוב ופיתוח:{" "}
-              <a
-                href="https://2bnmedia.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pp-muted/60 underline-offset-2 transition-colors hover:text-pp-red hover:underline"
-              >
+              <a href="https://2bnmedia.com" target="_blank" rel="noopener noreferrer"
+                className="text-white/50 underline-offset-2 transition-colors hover:text-pp-red hover:underline">
                 2bnmedia.com
               </a>
             </p>

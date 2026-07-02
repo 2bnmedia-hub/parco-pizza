@@ -151,8 +151,8 @@ export default function AccessibilityPage() {
                   <path d="M3 4.5H15L9 10.5Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
                   <rect x="3" y="4.5" width="12" height="9" rx="1" stroke="currentColor" strokeWidth="1.4"/>
                 </svg>
-                <a href="mailto:accessibility@parcopizza.online" className="text-pp-green font-semibold hover:underline break-all">
-                  accessibility@parcopizza.online
+                <a href="mailto:parco.pizza26@gmail.com" className="text-pp-green font-semibold hover:underline break-all">
+                  parco.pizza26@gmail.com
                 </a>
               </div>
               <p className="text-xs text-pp-muted pt-1">זמן תגובה: עד 5 ימי עסקים</p>

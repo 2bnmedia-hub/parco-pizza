@@ -169,8 +169,8 @@ export default function TermsPage() {
               </p>
               <p>
                 <strong>דוא&quot;ל:</strong>{" "}
-                <a href="mailto:info@parcopizza.online" className="text-pp-green hover:underline">
-                  info@parcopizza.online
+                <a href="mailto:parco.pizza26@gmail.com" className="text-pp-green hover:underline">
+                  parco.pizza26@gmail.com
                 </a>
               </p>
             </div>
