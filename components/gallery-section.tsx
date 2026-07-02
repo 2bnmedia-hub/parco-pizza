@@ -12,36 +12,26 @@ interface Photo {
 }
 
 const PHOTOS: Photo[] = [
-  {
-    src: `${BASE}imgi_99_FIL_7675740_1779028123750.jpg`,
-    alt: "מנה מיוחדת מפארקו פיצה",
-    span: "md:col-span-2 md:row-span-2",
-  },
-  {
-    src: `${BASE}imgi_104_FIL_7675744_1779028495212.jpg`,
-    alt: "פיצה טרייה מהתנור",
-    span: "",
-  },
-  {
-    src: `${BASE}imgi_102_FIL_7675741_1779614016120.jpg`,
-    alt: "פיצה כמו שאוהבים",
-    span: "",
-  },
-  {
-    src: `${BASE}imgi_100_FIL_7675743_1779264814570.jpg`,
-    alt: "פסטה ביתית",
-    span: "",
-  },
-  {
-    src: `${BASE}imgi_97_FIL_7675738_1779028042479.jpg`,
-    alt: "מגוון מנות",
-    span: "",
-  },
-  {
-    src: `${BASE}imgi_96_FIL_7675737_1779028020965.jpg`,
-    alt: "מנה מיוחדת",
-    span: "md:col-span-2",
-  },
+  { src: `${BASE}imgi_99_FIL_7675740_1779028123750.jpg`,   alt: "מנה מיוחדת מפארקו פיצה",   span: "md:col-span-2 md:row-span-2" },
+  { src: `${BASE}imgi_104_FIL_7675744_1779028495212.jpg`,  alt: "פיצה טרייה מהתנור",         span: "" },
+  { src: `${BASE}imgi_102_FIL_7675741_1779614016120.jpg`,  alt: "פיצה כמו שאוהבים",          span: "" },
+  { src: `${BASE}imgi_100_FIL_7675743_1779264814570.jpg`,  alt: "פסטה ביתית מוכנת מהלב",     span: "" },
+  { src: `${BASE}imgi_97_FIL_7675738_1779028042479.jpg`,   alt: "מגוון מנות",                span: "" },
+  { src: `${BASE}imgi_96_FIL_7675737_1779028020965.jpg`,   alt: "פיצה עם תוספות מגוונות",   span: "md:col-span-2" },
+  { src: `${BASE}imgi_94_FIL_7675735_1779027939339.jpg`,   alt: "מנה חמה מהמטבח",            span: "" },
+  { src: `${BASE}imgi_92_FIL_7675733_1779027923143.jpg`,   alt: "מנות המסעדה",               span: "" },
+  { src: `${BASE}imgi_35_FIL_7675723_1779280740605.jpg`,   alt: "אווירה ופיצה",              span: "md:col-span-2" },
+  { src: `${BASE}imgi_36_FIL_7675724_1779028731402.jpg`,   alt: "פיצה קריספית",              span: "" },
+  { src: `${BASE}imgi_37_FIL_7675725_1779283588230.jpg`,   alt: "מגוון הטעמים",              span: "" },
+  { src: `${BASE}imgi_38_FIL_7675726_1779283678546.jpg`,   alt: "פיצה משפחתית",              span: "" },
+  { src: `${BASE}imgi_39_FIL_7675727_1779280785595.jpg`,   alt: "גבינה נמסה",                span: "" },
+  { src: `${BASE}imgi_42_FIL_7682342_1779027241541.jpg`,   alt: "מנות מיוחדות",              span: "md:col-span-2" },
+  { src: `${BASE}imgi_88_FIL_7675729_1779027708623.jpg`,   alt: "פיצה טרייה",                span: "" },
+  { src: `${BASE}imgi_90_FIL_7675731_1779027781488.jpg`,   alt: "איכות בכל ביס",             span: "" },
+  { src: `${BASE}imgi_91_FIL_7675732_1779027830073.jpg`,   alt: "מנה מיוחדת של השף",        span: "" },
+  { src: `${BASE}imgi_34_FIL_7675722_1779280754983.jpg`,   alt: "פסטה ביתית",                span: "" },
+  { src: `${BASE}imgi_33_FIL_7675721_1779283807011.jpg`,   alt: "פיצה לבנה",                 span: "md:col-span-2" },
+  { src: `${BASE}imgi_32_FIL_7675720_1779019317849.jpg`,   alt: "ארוחה מושלמת",              span: "" },
 ];
 
 export function GallerySection() {
