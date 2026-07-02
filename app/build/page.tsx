@@ -116,10 +116,13 @@ const SAUCE_PHOTOS: Record<string, string> = {
 };
 
 const CHEESE_PHOTOS: Record<string, string> = {
-  mozzarella: "https://images.unsplash.com/photo-1589881133825-b9b7e47b7df4?w=80&h=80&fit=crop&q=80",
-  triple:     "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=80&h=80&fit=crop&q=80",
-  vegan:      "https://images.unsplash.com/photo-1464297162577-f5295c892194?w=80&h=80&fit=crop&q=80",
+  mozzarella: "https://images.unsplash.com/photo-1618164436241-4473940d1f5c?w=160&h=160&fit=crop&q=80",
+  triple:     "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=160&h=160&fit=crop&q=80",
+  vegan:      "https://images.unsplash.com/photo-1559561853-08451507cbe7?w=160&h=160&fit=crop&q=80",
 };
+
+// Single pizza photo used at 4 different display sizes
+const SIZE_PIZZA_PHOTO = "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&h=200&fit=crop&q=80";
 
 /* ─── Topping slots on the pizza (r≤72 from center 100,100) ── */
 const TOPPING_SLOTS = [
@@ -373,11 +376,19 @@ export default function BuildPage() {
                     borderColor: size===key ? "#E63946" : "#F0D8C8",
                     background:  size===key ? "rgba(230,57,70,0.05)" : "white",
                   }}>
-                  <div className="flex items-center justify-center" style={{width:44,height:44}}>
-                    <div className="rounded-full shadow-sm" style={{
-                      width:44*s.icon, height:44*s.icon,
-                      background: size===key ? "linear-gradient(135deg,#E63946,#c42d38)" : "linear-gradient(135deg,#F0D8C8,#E0C0B0)",
-                    }}/>
+                  <div className="flex items-center justify-center" style={{width:50,height:50}}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={SIZE_PIZZA_PHOTO}
+                      alt={s.label}
+                      className="rounded-full object-cover shadow-md transition-all"
+                      style={{
+                        width: Math.round(50 * s.icon),
+                        height: Math.round(50 * s.icon),
+                        outline: size===key ? "2.5px solid #E63946" : "2px solid transparent",
+                        outlineOffset: "2px",
+                      }}
+                    />
                   </div>
                   <span className="font-black text-xs text-pp-dark" style={{fontFamily:"var(--font-rubik)"}}>{s.label}</span>
                   <span className="text-[10px] text-pp-muted">{s.cm}</span>
@@ -389,7 +400,7 @@ export default function BuildPage() {
 
           {/* Dough */}
           <div className="rounded-3xl p-6 bg-white border border-pp-border">
-            <h2 className="font-black text-lg text-pp-dark mb-4" style={{fontFamily:"var(--font-rubik)"}}>סוג עיסה</h2>
+            <h2 className="font-black text-lg text-pp-dark mb-4" style={{fontFamily:"var(--font-rubik)"}}>סוג בצק</h2>
             <div className="grid grid-cols-2 gap-3">
               {(Object.entries(DOUGHS) as [DoughKey, typeof DOUGHS[DoughKey]][]).map(([key, d]) => (
                 <button key={key} onClick={()=>setDough(key)}
@@ -449,7 +460,7 @@ export default function BuildPage() {
                   <img
                     src={CHEESE_PHOTOS[key]}
                     alt={c.label}
-                    className="h-9 w-9 rounded-full shadow-md object-cover"
+                    className="h-16 w-16 rounded-xl shadow-md object-cover"
                     onError={(e) => { (e.currentTarget as HTMLImageElement).style.background = c.swatch; (e.currentTarget as HTMLImageElement).src = ""; }}
                   />
                   <p className="font-black text-xs text-pp-dark text-center" style={{fontFamily:"var(--font-rubik)"}}>{c.label}</p>
