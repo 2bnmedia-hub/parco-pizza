@@ -68,27 +68,35 @@ export function AccessibilityWidget() {
 
   return (
     <>
-      {/* Floating trigger button */}
+      {/* Floating trigger button — same size + position as AI chat, stacked above it */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-24 left-4 z-[9999] flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-white"
+        className="fixed bottom-[88px] left-4 z-[9999] flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-white"
         style={{ background: "#0057B8" }}
         aria-label="פתח תפריט נגישות"
         aria-expanded={open}
         aria-haspopup="dialog"
       >
-        {/* ISA — International Symbol of Access */}
-        <svg width="28" height="28" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+        {/* Classic ISA — International Symbol of Access */}
+        <svg width="30" height="30" viewBox="0 0 100 110" fill="white" aria-hidden="true">
           {/* Head */}
-          <circle cx="60" cy="12" r="10" />
-          {/* Body + arm */}
-          <path d="M54 24 L46 58 L68 58 L78 42 L60 38 L64 24 Z" />
-          {/* Wheel */}
-          <circle cx="44" cy="76" r="20" fill="none" stroke="white" strokeWidth="8" />
-          {/* Small front wheel */}
-          <circle cx="75" cy="85" r="7" />
-          {/* Foot rest */}
-          <line x1="68" y1="58" x2="75" y2="78" stroke="white" strokeWidth="7" strokeLinecap="round" />
+          <circle cx="68" cy="10" r="10" />
+          {/* Torso leaning forward */}
+          <line x1="63" y1="21" x2="53" y2="48" stroke="white" strokeWidth="8" strokeLinecap="round" />
+          {/* Arm extended forward */}
+          <line x1="60" y1="31" x2="82" y2="24" stroke="white" strokeWidth="7" strokeLinecap="round" />
+          {/* Forearm angled */}
+          <line x1="82" y1="24" x2="88" y2="36" stroke="white" strokeWidth="7" strokeLinecap="round" />
+          {/* Seat */}
+          <line x1="53" y1="48" x2="74" y2="48" stroke="white" strokeWidth="8" strokeLinecap="round" />
+          {/* Lower leg */}
+          <line x1="74" y1="48" x2="79" y2="67" stroke="white" strokeWidth="7" strokeLinecap="round" />
+          {/* Footrest */}
+          <line x1="66" y1="67" x2="81" y2="67" stroke="white" strokeWidth="7" strokeLinecap="round" />
+          {/* Rear wheel (large — dominant feature) */}
+          <circle cx="36" cy="78" r="22" fill="none" stroke="white" strokeWidth="8" />
+          {/* Front caster (small) */}
+          <circle cx="80" cy="75" r="7" />
         </svg>
       </button>
 

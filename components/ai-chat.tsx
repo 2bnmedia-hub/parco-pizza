@@ -93,13 +93,17 @@ function MarcoAvatar() {
       style={{ background: "linear-gradient(135deg, #2E7D32, #1b5e20)" }}
       aria-hidden="true"
     >
-      {/* Chef hat + basil leaf */}
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        {/* Chef hat */}
-        <path d="M6 14h12v4a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4z" fill="white" opacity="0.95"/>
-        <path d="M9 14 V10 A3 3 0 0 1 6 7 A3 3 0 0 1 9 4 C9.5 2.8 10.7 2 12 2 C13.3 2 14.5 2.8 15 4 A3 3 0 0 1 18 7 A3 3 0 0 1 15 10 V14" fill="white" opacity="0.95"/>
-        {/* Basil leaf accent */}
-        <path d="M10 7 C10 7 9 5.5 10 4.5 S12 4 12 5 S11 7 10 7Z" fill="#4ade80" opacity="0.9"/>
+      {/* Chat bubble + sparkle — clear AI chat indicator */}
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+        {/* Speech bubble body */}
+        <path d="M3 5 C3 3.9 3.9 3 5 3 H21 C22.1 3 23 3.9 23 5 V15 C23 16.1 22.1 17 21 17 H14 L10 22 V17 H5 C3.9 17 3 16.1 3 15 Z"
+          fill="white" opacity="0.95"/>
+        {/* Sparkle star top-right inside bubble */}
+        <path d="M18 6.5 L18.6 8.2 L20.3 8.8 L18.6 9.4 L18 11.1 L17.4 9.4 L15.7 8.8 L17.4 8.2 Z"
+          fill="#2E7D32"/>
+        {/* Two small dots — typing dots */}
+        <circle cx="8.5" cy="12" r="1.4" fill="#2E7D32"/>
+        <circle cx="12" cy="12" r="1.4" fill="#2E7D32"/>
       </svg>
     </div>
   );
@@ -343,7 +347,7 @@ export function AiChat() {
   return (
     <>
       {/* Floating toggle button */}
-      <div className="fixed bottom-6 left-6 z-50 group">
+      <div className="fixed bottom-4 left-4 z-50 group">
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "סגור צ'אט עם מארקו" : "פתח צ'אט עם מארקו"}
