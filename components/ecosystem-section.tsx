@@ -144,13 +144,13 @@ export function EcosystemSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
-            <ScrollReveal key={f.href} className={`reveal-d${(i%4)+1} flex flex-col`}>
+            <ScrollReveal key={f.href} className={`reveal-d${(i%4)+1}`}>
               <Link href={f.href}
-                className="group flex flex-col flex-1 rounded-3xl border-2 border-transparent p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group block h-full rounded-3xl border-2 border-transparent p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
                 style={{background: f.bg, borderColor: `${f.color}22`}}>
-                <div className="flex items-start gap-4 flex-1">
+                <div className="flex items-start gap-4">
                   <div className="shrink-0">
                     <f.Icon color={f.color} />
                   </div>
