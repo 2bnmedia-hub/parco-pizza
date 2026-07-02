@@ -116,7 +116,7 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
       />
 
       {/* Progress bars — below navbar */}
-      <div className="absolute inset-x-0 z-30 flex gap-1.5 px-4 md:px-6" style={{ top: "70px" }}>
+      <div className="absolute inset-x-0 z-30 flex gap-1.5 px-4 md:px-6" style={{ top: "82px" }}>
         {SLIDES.map((_, i) => (
           <button
             key={i}
