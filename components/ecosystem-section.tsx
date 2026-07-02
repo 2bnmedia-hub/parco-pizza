@@ -1,10 +1,85 @@
 import Link from "next/link";
 import { ScrollReveal } from "./scroll-reveal";
 
+function IconPizzaBuilder({ color }: { color: string }) {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="16" stroke={color} strokeWidth="2" fill="none" fillOpacity="0.12" />
+      <circle cx="20" cy="20" r="16" fill={color} fillOpacity="0.10" />
+      <path d="M20 4 L20 20" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeOpacity="0.7" />
+      <path d="M20 20 L32.9 28" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeOpacity="0.7" />
+      <path d="M20 20 L7.1 28" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeOpacity="0.7" />
+      <path d="M7 29 Q20 37 33 29" stroke={color} strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <circle cx="20" cy="11" r="2.5" fill={color} />
+      <circle cx="14" cy="23" r="2" fill={color} />
+      <circle cx="26" cy="23" r="2" fill={color} />
+    </svg>
+  );
+}
+
+function IconEvents({ color }: { color: string }) {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="16" fill={color} fillOpacity="0.1" />
+      <path d="M20 6 L22.9 14.2 L31.8 14.2 L24.4 19.5 L27.3 27.8 L20 22.5 L12.7 27.8 L15.6 19.5 L8.2 14.2 L17.1 14.2 Z" fill={color} fillOpacity="0.85" />
+      <circle cx="29" cy="10" r="1.8" fill={color} fillOpacity="0.6" />
+      <circle cx="11" cy="30" r="1.4" fill={color} fillOpacity="0.5" />
+      <circle cx="32" cy="28" r="1.2" fill={color} fillOpacity="0.4" />
+    </svg>
+  );
+}
+
+function IconCatering({ color }: { color: string }) {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="16" fill={color} fillOpacity="0.1" />
+      <path d="M8 28 Q20 14 32 28" stroke={color} strokeWidth="2" fill="none" strokeLinecap="round" />
+      <line x1="8" y1="30" x2="32" y2="30" stroke={color} strokeWidth="2.2" strokeLinecap="round" />
+      <path d="M15 20 C15 16 17 12 20 12 C23 12 25 16 25 20" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" />
+      <line x1="20" y1="12" x2="20" y2="9" stroke={color} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="20" cy="8.5" r="1.8" fill={color} />
+    </svg>
+  );
+}
+
+function IconVIP({ color }: { color: string }) {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="16" fill={color} fillOpacity="0.1" />
+      <path d="M8 26 L12 14 L20 22 L28 14 L32 26 Z" fill={color} fillOpacity="0.85" strokeLinejoin="round" />
+      <line x1="7" y1="29" x2="33" y2="29" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="12" cy="14" r="2.2" fill={color} />
+      <circle cx="20" cy="22" r="2.2" fill={color} />
+      <circle cx="28" cy="14" r="2.2" fill={color} />
+    </svg>
+  );
+}
+
+function IconShop({ color }: { color: string }) {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="16" fill={color} fillOpacity="0.1" />
+      <path d="M13 17 L11 30 L29 30 L27 17 Z" stroke={color} strokeWidth="2" strokeLinejoin="round" fill={color} fillOpacity="0.12" />
+      <path d="M16 17 C16 14 17.8 11 20 11 C22.2 11 24 14 24 17" stroke={color} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <circle cx="20" cy="23" r="3" fill={color} fillOpacity="0.7" />
+    </svg>
+  );
+}
+
+function IconReviews({ color }: { color: string }) {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="16" fill={color} fillOpacity="0.1" />
+      <path d="M10 12 Q10 8 14 8 L26 8 Q30 8 30 12 L30 22 Q30 26 26 26 L23 26 L20 30 L17 26 L14 26 Q10 26 10 22 Z" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M20 13 L21.4 17 H25.6 L22.1 19.5 L23.5 23.5 L20 21 L16.5 23.5 L17.9 19.5 L14.4 17 H18.6 Z" fill={color} />
+    </svg>
+  );
+}
+
 const FEATURES = [
   {
     href: "/build",
-    emoji: "🍕",
+    Icon: IconPizzaBuilder,
     title: "בנה פיצה",
     desc: "בחר גודל, עיסה, רוטב וטופינגס — הפיצה שלך, הסגנון שלך",
     badge: "חדש",
@@ -13,7 +88,7 @@ const FEATURES = [
   },
   {
     href: "/events",
-    emoji: "🎉",
+    Icon: IconEvents,
     title: "אירועים",
     desc: "ימי הולדת, אירועים עסקיים, מסיבות — אנחנו מארחים הכל",
     color: "#F4A261",
@@ -21,7 +96,7 @@ const FEATURES = [
   },
   {
     href: "/catering",
-    emoji: "🏢",
+    Icon: IconCatering,
     title: "קייטרינג עסקי",
     desc: "צהריים לצוות, ישיבות וכנסים — שירות B2B מקצועי",
     color: "#2D6A4F",
@@ -29,7 +104,7 @@ const FEATURES = [
   },
   {
     href: "/loyalty",
-    emoji: "👑",
+    Icon: IconVIP,
     title: "מועדון VIP",
     desc: "נקודות, פרסים, דרגות — ההטבות גדלות עם כל הזמנה",
     color: "#D4A017",
@@ -37,7 +112,7 @@ const FEATURES = [
   },
   {
     href: "/shop",
-    emoji: "🛒",
+    Icon: IconShop,
     title: "חנות",
     desc: "רטבים ביתיים, תבלינים, ערכות פיצה ומרצ׳נדייז מיוחד",
     color: "#8B6347",
@@ -45,7 +120,7 @@ const FEATURES = [
   },
   {
     href: "#reviews",
-    emoji: "⭐",
+    Icon: IconReviews,
     title: "ביקורות",
     desc: "ראה מה אומרת הקהילה, ושתף את החוויה שלך",
     color: "#E63946",
@@ -76,7 +151,9 @@ export function EcosystemSection() {
                 className="group block rounded-3xl border-2 border-transparent p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
                 style={{background: f.bg, borderColor: `${f.color}22`}}>
                 <div className="flex items-start gap-4">
-                  <div className="text-4xl shrink-0">{f.emoji}</div>
+                  <div className="shrink-0">
+                    <f.Icon color={f.color} />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-black text-lg text-pp-dark" style={{fontFamily:"var(--font-rubik)"}}>{f.title}</h3>

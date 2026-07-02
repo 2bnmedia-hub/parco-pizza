@@ -60,7 +60,6 @@ function IconHeart() {
 }
 
 const STATS = [
-  { Icon: IconPizza,  value: 1000, suffix: "+",  label: "פיצות בשבוע" },
   { Icon: IconStar,   value: 4.9,  suffix: "",   label: "דירוג ממוצע", decimal: true },
   { Icon: IconShield, value: 100,  suffix: "%",  label: "כשר למהדרין" },
   { Icon: IconHeart,  value: 10,   suffix: "+",  label: "שנות ניסיון" },
@@ -119,7 +118,7 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Stats row */}
-        <div className="mb-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mb-20 grid grid-cols-3 gap-4 max-w-2xl mx-auto w-full">
           {STATS.map((s, i) => (
             <ScrollReveal key={s.label} className={`reveal-d${i + 1}`}>
               <div className="card-premium group rounded-2xl bg-gradient-to-br from-pp-surface to-white border border-pp-border/60 p-6 text-center shadow-sm">
@@ -157,14 +156,14 @@ export function AboutSection() {
               </div>
 
               {/* Floating badge — kosher */}
-              <div className="absolute -bottom-4 -left-4 rounded-2xl bg-pp-red px-5 py-4 shadow-2xl text-white animate-float">
+              <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white border-2 border-pp-green/40 px-5 py-4 shadow-2xl animate-float">
                 <p
-                  className="font-black text-2xl leading-none"
+                  className="font-black text-2xl leading-none text-pp-green"
                   style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
                 >
                   כשר
                 </p>
-                <p className="mt-1 text-[10px] tracking-[0.3em] text-white/80 uppercase font-bebas">
+                <p className="mt-1 text-[10px] tracking-[0.3em] text-pp-green/70 uppercase font-bebas">
                   למהדרין
                 </p>
               </div>
@@ -257,9 +256,12 @@ export function AboutSection() {
             <ScrollReveal>
               <a
                 href="/#location"
-                className="btn-primary inline-block px-8 py-3.5 text-sm tracking-widest uppercase"
+                className="inline-flex items-center gap-3 rounded-full border-2 border-pp-dark text-pp-dark px-8 py-3.5 text-sm font-black tracking-widest uppercase transition-all hover:bg-pp-dark hover:text-white"
               >
                 בואו לבקר
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
             </ScrollReveal>
           </div>

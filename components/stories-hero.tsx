@@ -142,10 +142,10 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
       </div>
 
       {/* Center content */}
-      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center px-6 text-center pointer-events-none">
+      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center px-6 text-center pointer-events-none gap-7">
         <p
           key={`sub-${current}`}
-          className="mb-3 text-xs tracking-[0.4em] text-pp-yellow uppercase animate-fade-in"
+          className="text-sm tracking-[0.5em] text-pp-yellow uppercase animate-fade-in"
         >
           {slide.sub}
         </p>
@@ -158,7 +158,7 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
         </h1>
         <div
           key={`cta-${current}`}
-          className="mt-8 flex flex-wrap justify-center gap-4 pointer-events-auto animate-fade-up"
+          className="flex flex-wrap justify-center gap-4 pointer-events-auto animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
           <button

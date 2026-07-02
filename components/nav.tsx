@@ -14,20 +14,20 @@ const LINKS = [
 
 function LogoMark() {
   return (
-    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true">
-      <circle cx="19" cy="19" r="18" fill="#E63946" />
-      {/* Pizza slice segments */}
-      <path d="M19 3 L19 19" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M19 19 L33 28" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M19 19 L5 28" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      {/* Crust arc */}
-      <path d="M5 28 Q19 37 33 28" stroke="white" strokeWidth="1.4" strokeLinecap="round" fill="none" />
-      {/* Toppings */}
-      <circle cx="19" cy="10" r="1.8" fill="white" />
-      <circle cx="13.5" cy="21" r="1.4" fill="white" opacity="0.85" />
-      <circle cx="24.5" cy="21" r="1.4" fill="white" opacity="0.85" />
-      {/* Center dot */}
-      <circle cx="19" cy="19" r="1.6" fill="white" />
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+      {/* Badge background */}
+      <circle cx="21" cy="21" r="20" fill="#1A0806" />
+      <circle cx="21" cy="21" r="20" fill="#E63946" fillOpacity="0.92" />
+      {/* Pizza wheel outer ring */}
+      <circle cx="21" cy="21" r="14" stroke="white" strokeWidth="0.6" fill="none" strokeOpacity="0.25" />
+      {/* Filled pizza wedge (top slice) */}
+      <path d="M21 7 L10 29 L32 29 Z" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.4" strokeLinejoin="round" />
+      {/* Thick crust */}
+      <path d="M9.5 30 Q21 38 32.5 30" stroke="white" strokeWidth="3.2" strokeLinecap="round" fill="none" />
+      {/* Toppings – 3 solid dots */}
+      <circle cx="21" cy="15" r="2.6" fill="white" />
+      <circle cx="15.5" cy="24.5" r="2" fill="white" />
+      <circle cx="26.5" cy="24.5" r="2" fill="white" />
     </svg>
   );
 }
@@ -84,7 +84,7 @@ export function Nav({ setOrderOpen }: NavProps) {
             </div>
             <div className="flex flex-col leading-none gap-0.5">
               <span
-                className="font-black text-xl tracking-tight text-pp-dark transition-colors group-hover:text-pp-red"
+                className="font-black text-[1.7rem] tracking-tight text-pp-dark transition-colors group-hover:text-pp-red"
                 style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
               >
                 פארקו
@@ -96,7 +96,7 @@ export function Nav({ setOrderOpen }: NavProps) {
           </Link>
 
           {/* Desktop nav — center */}
-          <nav className="hidden gap-9 md:flex" dir="rtl">
+          <nav className="hidden gap-12 md:flex" dir="rtl">
             {LINKS.map((l) => (
               <Link
                 key={l.href}

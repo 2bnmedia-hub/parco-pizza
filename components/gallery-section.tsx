@@ -46,7 +46,7 @@ const PHOTOS: Photo[] = [
 
 export function GallerySection() {
   return (
-    <section id="gallery" className="bg-pp-dark py-24 md:py-32">
+    <section id="gallery" className="py-24 md:py-32" style={{ background: "#111827" }}>
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Header */}

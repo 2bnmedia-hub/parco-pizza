@@ -194,14 +194,14 @@ export function MenuSection() {
 
         {/* Category tabs */}
         <ScrollReveal className="reveal-d4">
-          <div className="mb-10 flex flex-wrap justify-center gap-2.5">
+          <div className="mb-10 flex flex-wrap justify-center gap-3.5">
             {CATEGORIES.map((cat) => {
               const isActive = cat.key === activeKey;
               return (
                 <button
                   key={cat.key}
                   onClick={() => setActiveKey(cat.key)}
-                  className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold tracking-wide transition-all duration-300 ${
+                  className={`flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold tracking-wide transition-all duration-300 ${
                     isActive
                       ? "bg-pp-red text-white shadow-lg shadow-pp-red/30 scale-105"
                       : "bg-white text-pp-muted border border-pp-border hover:border-pp-red hover:text-pp-red hover:shadow-md"
@@ -248,14 +248,13 @@ export function MenuSection() {
               <p className="mt-1.5 text-xs text-pp-muted leading-relaxed">{item.desc}</p>
 
               {/* Price */}
-              <div className="mt-4 flex items-end justify-between">
+              <div className="mt-4 flex items-baseline gap-1.5">
                 <span
-                  className="text-2xl font-black text-pp-red"
-                  style={{ fontFamily: "var(--font-rubik)", fontWeight: 900 }}
+                  className="text-xl text-pp-red"
+                  style={{ fontFamily: "var(--font-rubik)", fontWeight: 500 }}
                 >
                   {item.price}
                 </span>
-                <span className="text-pp-muted/60 text-[11px] mb-1">ש"ח</span>
               </div>
 
               {/* Bottom accent line */}
@@ -269,9 +268,12 @@ export function MenuSection() {
           <div className="mt-14 text-center">
             <Link
               href="/menu"
-              className="btn-primary inline-block px-10 py-4 text-sm tracking-widest uppercase"
+              className="inline-flex items-center gap-3 rounded-full border-2 border-pp-dark text-pp-dark px-10 py-4 text-sm font-black tracking-widest uppercase transition-all hover:bg-pp-dark hover:text-white"
             >
               לכל התפריט
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </Link>
           </div>
         </ScrollReveal>

@@ -17,16 +17,15 @@ const NAV_LINKS = [
 
 function LogoMarkFooter() {
   return (
-    <svg width="32" height="32" viewBox="0 0 38 38" fill="none" aria-hidden="true">
-      <circle cx="19" cy="19" r="18" fill="#E63946" />
-      <path d="M19 3 L19 19" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M19 19 L33 28" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M19 19 L5 28" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M5 28 Q19 37 33 28" stroke="white" strokeWidth="1.4" strokeLinecap="round" fill="none" />
-      <circle cx="19" cy="10" r="1.8" fill="white" />
-      <circle cx="13.5" cy="21" r="1.4" fill="white" opacity="0.85" />
-      <circle cx="24.5" cy="21" r="1.4" fill="white" opacity="0.85" />
-      <circle cx="19" cy="19" r="1.6" fill="white" />
+    <svg width="32" height="32" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+      <circle cx="21" cy="21" r="20" fill="#1A0806" />
+      <circle cx="21" cy="21" r="20" fill="#E63946" fillOpacity="0.92" />
+      <circle cx="21" cy="21" r="14" stroke="white" strokeWidth="0.6" fill="none" strokeOpacity="0.25" />
+      <path d="M21 7 L10 29 L32 29 Z" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M9.5 30 Q21 38 32.5 30" stroke="white" strokeWidth="3.2" strokeLinecap="round" fill="none" />
+      <circle cx="21" cy="15" r="2.6" fill="white" />
+      <circle cx="15.5" cy="24.5" r="2" fill="white" />
+      <circle cx="26.5" cy="24.5" r="2" fill="white" />
     </svg>
   );
 }
