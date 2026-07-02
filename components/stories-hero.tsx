@@ -115,8 +115,8 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
         aria-label="לחץ לשקופית הבאה/הקודמת"
       />
 
-      {/* Progress bars — top */}
-      <div className="absolute top-0 inset-x-0 z-30 flex gap-1.5 px-4 pt-4 md:px-6">
+      {/* Progress bars — below navbar */}
+      <div className="absolute inset-x-0 z-30 flex gap-1.5 px-4 md:px-6" style={{ top: "70px" }}>
         {SLIDES.map((_, i) => (
           <button
             key={i}
