@@ -168,21 +168,40 @@ export function Footer({ setOrderOpen }: FooterProps) {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5 px-6 py-5">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-center md:flex-row md:text-start">
-          <p className="text-[11px] text-pp-muted/40">
-            © {year} פארקו פיצה. כל הזכויות שמורות.
-          </p>
-          <p className="text-[11px] text-pp-muted/40">
-            עיצוב ופיתוח:{" "}
-            <a
-              href="https://2bnmedia.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pp-muted/60 underline-offset-2 transition-colors hover:text-pp-red hover:underline"
-            >
-              2bnmedia.com
-            </a>
-          </p>
+        <div className="mx-auto max-w-7xl space-y-3">
+          {/* Legal links */}
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-1.5" aria-label="קישורי מדיניות">
+            {[
+              { href: "/accessibility", label: "הצהרת נגישות" },
+              { href: "/terms",         label: "תקנון האתר" },
+              { href: "/privacy",       label: "מדיניות פרטיות" },
+            ].map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[11px] text-pp-muted/40 underline-offset-2 transition-colors hover:text-pp-muted/70 hover:underline"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+          {/* Copyright row */}
+          <div className="flex flex-col items-center justify-between gap-1.5 text-center md:flex-row">
+            <p className="text-[11px] text-pp-muted/40">
+              © {year} פארקו פיצה. כל הזכויות שמורות.
+            </p>
+            <p className="text-[11px] text-pp-muted/40">
+              עיצוב ופיתוח:{" "}
+              <a
+                href="https://2bnmedia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pp-muted/60 underline-offset-2 transition-colors hover:text-pp-red hover:underline"
+              >
+                2bnmedia.com
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 

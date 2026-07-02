@@ -467,6 +467,43 @@ footer :focus-visible {
   display: none;
 }
 
+/* ── Accessibility widget classes ────────────────────── */
+.a11y-font-lg  { font-size: 110% !important; }
+.a11y-font-xl  { font-size: 125% !important; }
+
+.a11y-contrast {
+  filter: contrast(1.6) brightness(1.05) !important;
+}
+.a11y-grayscale {
+  filter: grayscale(1) !important;
+}
+.a11y-links a,
+.a11y-links button {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  outline: 1px dashed currentColor !important;
+  outline-offset: 2px !important;
+}
+.a11y-no-anim *,
+.a11y-no-anim *::before,
+.a11y-no-anim *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+.a11y-big-cursor,
+.a11y-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 4 L8 26 L13 20 L17 28 L21 26 L17 18 L24 18 Z' fill='black' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 0 0, auto !important;
+}
+.a11y-readable,
+.a11y-readable * {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.1em !important;
+  line-height: 1.7 !important;
+}
+
 /* ── Mobile safe area padding ─────────────────────────── */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .pb-safe {

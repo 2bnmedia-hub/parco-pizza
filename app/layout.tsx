@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Heebo, Rubik } from "next/font/google";
 import { CookieBanner } from "@/components/cookie-banner";
+import { AccessibilityWidget } from "@/components/accessibility-widget";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         {children}
         <CookieBanner />
+        <AccessibilityWidget />
       </body>
     </html>
   );
