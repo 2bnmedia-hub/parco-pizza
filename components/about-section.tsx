@@ -224,32 +224,36 @@ export function AboutSection() {
             </ScrollReveal>
 
             <ScrollReveal className="reveal-d6">
-              <div className="flex flex-wrap gap-2.5">
-                {/* Pizza tag */}
-                <span className="inline-flex items-center gap-2 rounded-full border border-pp-border bg-pp-surface px-4 py-2 text-sm font-semibold text-pp-dark">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-pp-red shrink-0">
-                    <path d="M7 1.5L12 11H2Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
-                    <circle cx="7" cy="7.5" r="1" fill="currentColor"/>
-                  </svg>
-                  פיצה טרייה
-                </span>
-                {/* Pasta tag */}
-                <span className="inline-flex items-center gap-2 rounded-full border border-pp-border bg-pp-surface px-4 py-2 text-sm font-semibold text-pp-dark">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-pp-red shrink-0">
-                    <path d="M2 7 C2 4 4 2 7 2 S12 4 12 7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                    <path d="M3 9 C3 7 5 6 7 6 S11 7 11 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                    <path d="M4 11.5 C4 10 5.5 9.5 7 9.5 S10 10 10 11.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                  </svg>
-                  פסטה ביתית
-                </span>
-                {/* Kosher tag */}
-                <span className="inline-flex items-center gap-2 rounded-full border border-pp-green/30 bg-pp-green/8 px-4 py-2 text-sm font-semibold text-pp-green">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-pp-green shrink-0">
-                    <path d="M7 1.5 L3 3.5 V7 C3 10 4.8 12.5 7 13.5 C9.2 12.5 11 10 11 7 V3.5 Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
-                    <path d="M5 7 L6.5 8.5 L9.5 5.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  כשר חלבי
-                </span>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pp-red/10">
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="text-pp-red">
+                      <path d="M7 1.5L12 11H2Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
+                      <circle cx="7" cy="7.5" r="1" fill="currentColor"/>
+                    </svg>
+                  </span>
+                  <span className="text-sm font-medium text-pp-muted">פיצה טרייה</span>
+                </div>
+                <span className="h-3 w-px bg-pp-border" aria-hidden="true" />
+                <div className="flex items-center gap-2">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pp-red/10">
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="text-pp-red">
+                      <path d="M2 7 C2 4 4 2 7 2 S12 4 12 7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                      <path d="M3 9 C3 7 5 6 7 6 S11 7 11 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                      <path d="M4 11.5 C4 10 5.5 9.5 7 9.5 S10 10 10 11.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                  <span className="text-sm font-medium text-pp-muted">פסטה ביתית</span>
+                </div>
+                <span className="h-3 w-px bg-pp-border" aria-hidden="true" />
+                <div className="flex items-center gap-2">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pp-green/10">
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="text-pp-green">
+                      <path d="M5 7 L6.5 8.5 L9.5 5.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                  <span className="text-sm font-medium text-pp-green">כשר חלבי</span>
+                </div>
               </div>
             </ScrollReveal>
 
