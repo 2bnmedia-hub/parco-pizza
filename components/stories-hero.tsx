@@ -3,29 +3,36 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 
+const BASE = "https://parco-pizza.co.il/wp-content/uploads/sites/249/2026/05/";
+
 const SLIDES = [
   {
-    src: "https://parco-pizza.co.il/wp-content/uploads/sites/249/2026/05/imgi_104_FIL_7675744_1779028495212.jpg",
+    src: `${BASE}imgi_99_FIL_7675740_1779028123750.jpg`,
     title: "טרי מהתנור",
     sub: "כל יום, כל שעה",
   },
   {
-    src: "https://parco-pizza.co.il/wp-content/uploads/sites/249/2026/05/imgi_102_FIL_7675741_1779614016120.jpg",
+    src: `${BASE}imgi_104_FIL_7675744_1779028495212.jpg`,
     title: "פיצה כמו שאוהבים",
     sub: "מרגריטה ועד שף",
   },
   {
-    src: "https://parco-pizza.co.il/wp-content/uploads/sites/249/2026/05/imgi_100_FIL_7675743_1779264814570.jpg",
+    src: `${BASE}imgi_96_FIL_7675737_1779028020965.jpg`,
+    title: "גבינות מובחרות",
+    sub: "טעם אמיתי בכל ביס",
+  },
+  {
+    src: `${BASE}imgi_102_FIL_7675741_1779614016120.jpg`,
     title: "פסטה ביתית",
     sub: "מוכנת מהלב",
   },
   {
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&q=85&auto=format&fit=crop",
+    src: `${BASE}imgi_42_FIL_7682342_1779027241541.jpg`,
     title: "כשר למהדרין",
     sub: "גן אברהם, קריית ים",
   },
   {
-    src: "https://parco-pizza.co.il/wp-content/uploads/sites/249/2026/05/imgi_99_FIL_7675740_1779028123750.jpg",
+    src: `${BASE}imgi_33_FIL_7675721_1779283807011.jpg`,
     title: "הזמינו עכשיו",
     sub: "משלוח | איסוף | ישיבה",
   },
