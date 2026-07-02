@@ -24,7 +24,8 @@ function Separator({ green }: { green?: boolean }) {
       height="14"
       viewBox="0 0 16 16"
       fill="none"
-      className="mx-6 shrink-0 opacity-60"
+      className="shrink-0 opacity-60"
+      style={{ margin: "0 2rem" }}
       aria-hidden="true"
     >
       <path
@@ -35,26 +36,13 @@ function Separator({ green }: { green?: boolean }) {
   );
 }
 
-/* Render one full pass of all items */
-function ItemRow() {
-  return (
-    <>
-      {ITEMS.map((item, i) => (
-        <span key={i} className="inline-flex items-center">
-          <span
-            className={`text-sm font-bold tracking-widest uppercase ${
-              item.highlight ? "text-white" : "text-white/70"
-            }`}
-            style={{ fontFamily: "var(--font-rubik)", fontWeight: item.highlight ? 700 : 500 }}
-          >
-            {item.text}
-          </span>
-          <Separator green={i % 5 === 2} />
-        </span>
-      ))}
-    </>
-  );
-}
+/* 6 repetitions per half → total 12 reps.
+   Keyframe: 0 → -50% (moves exactly one half = 6 reps).
+   Guarantees no gap even on ultra-wide screens. */
+const REPS_PER_HALF = 6;
+const allItems = Array.from({ length: REPS_PER_HALF * 2 }, (_, r) =>
+  ITEMS.map((item, i) => ({ ...item, key: `${r}-${i}`, starGreen: (r + i) % 5 === 2 }))
+).flat();
 
 export function MarqueeStrip() {
   return (
@@ -64,30 +52,37 @@ export function MarqueeStrip() {
       aria-hidden="true"
     >
       <div
-        className="py-4"
+        className="py-5"
         style={{
           background: "linear-gradient(135deg, #C62828 0%, #9b1a1a 50%, #C62828 100%)",
           backgroundSize: "200% auto",
           animation: "shimmer 6s linear infinite",
         }}
       >
-        {/* Two identical halves — animates exactly -50% so loop is seamless */}
         <div
-          className="flex whitespace-nowrap"
+          className="flex items-center whitespace-nowrap"
           style={{
             width: "max-content",
-            animation: "marquee 50s linear infinite",
+            animation: "marquee 60s linear infinite",
           }}
           dir="ltr"
         >
-          {/* Half 1 */}
-          <div className="flex whitespace-nowrap">
-            <ItemRow />
-          </div>
-          {/* Half 2 — identical, ensures nothing is ever empty on reset */}
-          <div className="flex whitespace-nowrap">
-            <ItemRow />
-          </div>
+          {allItems.map((item) => (
+            <span key={item.key} className="inline-flex items-center">
+              <span
+                className={`text-sm font-bold tracking-widest uppercase ${
+                  item.highlight ? "text-white" : "text-white/70"
+                }`}
+                style={{
+                  fontFamily: "var(--font-rubik)",
+                  fontWeight: item.highlight ? 700 : 500,
+                }}
+              >
+                {item.text}
+              </span>
+              <Separator green={item.starGreen} />
+            </span>
+          ))}
         </div>
       </div>
     </div>
