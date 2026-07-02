@@ -81,6 +81,46 @@ const UPSELLS = {
   ],
 };
 
+/* ─── Photo Maps ─────────────────────────────────────────── */
+const PIZZA_PHOTOS: Record<string, string> = {
+  tomato: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&h=500&fit=crop&q=85",
+  cream:  "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=500&h=500&fit=crop&q=85",
+  pesto:  "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&h=500&fit=crop&q=85",
+  bbq:    "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&h=500&fit=crop&q=85",
+};
+
+const TOPPING_PHOTOS: Record<string, string> = {
+  mushroom:    "https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=200&h=200&fit=crop&q=80",
+  peppers:     "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=200&h=200&fit=crop&q=80",
+  onion:       "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200&h=200&fit=crop&q=80",
+  olives:      "https://images.unsplash.com/photo-1550583724-b2fd6c65b3fa?w=200&h=200&fit=crop&q=80",
+  corn:        "https://images.unsplash.com/photo-1508313880080-c4bef0730395?w=200&h=200&fit=crop&q=80",
+  artichoke:   "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=200&h=200&fit=crop&q=80",
+  spinach:     "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=200&h=200&fit=crop&q=80",
+  sun_tomato:  "https://images.unsplash.com/photo-1592924357228-91a4daadcfad?w=200&h=200&fit=crop&q=80",
+  chicken:     "https://images.unsplash.com/photo-1555041469-149851eb6889?w=200&h=200&fit=crop&q=80",
+  beef:        "https://images.unsplash.com/photo-1529694157872-4f96b461e4e6?w=200&h=200&fit=crop&q=80",
+  tuna:        "https://images.unsplash.com/photo-1519708227418-a2f55f75e1fd?w=200&h=200&fit=crop&q=80",
+  salami:      "https://images.unsplash.com/photo-1601924638867-3a6de6b7a500?w=200&h=200&fit=crop&q=80",
+  pepperoni:   "https://images.unsplash.com/photo-1574068468668-a05a1abb3d59?w=200&h=200&fit=crop&q=80",
+  truffle:     "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&h=200&fit=crop&q=80",
+  caramelized: "https://images.unsplash.com/photo-1587659335235-5f6a8a79dd34?w=200&h=200&fit=crop&q=80",
+  garlic:      "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=200&h=200&fit=crop&q=80",
+};
+
+const SAUCE_PHOTOS: Record<string, string> = {
+  tomato: "https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=80&h=80&fit=crop&q=80",
+  cream:  "https://images.unsplash.com/photo-1547592180-85f173990554?w=80&h=80&fit=crop&q=80",
+  pesto:  "https://images.unsplash.com/photo-1694849506823-23a00e1e7553?w=80&h=80&fit=crop&q=80",
+  bbq:    "https://images.unsplash.com/photo-1528712306091-ed0763094c98?w=80&h=80&fit=crop&q=80",
+};
+
+const CHEESE_PHOTOS: Record<string, string> = {
+  mozzarella: "https://images.unsplash.com/photo-1589881133825-b9b7e47b7df4?w=80&h=80&fit=crop&q=80",
+  triple:     "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=80&h=80&fit=crop&q=80",
+  vegan:      "https://images.unsplash.com/photo-1464297162577-f5295c892194?w=80&h=80&fit=crop&q=80",
+};
+
 /* ─── Topping slots on the pizza (r≤72 from center 100,100) ── */
 const TOPPING_SLOTS = [
   {x:100,y:100},
@@ -90,213 +130,40 @@ const TOPPING_SLOTS = [
   {x:100,y:158},{x:66,y:144},{x:46,y:116},{x:47,y:85},
 ];
 
-/* ─── Realistic topping shapes ──────────────────────────── */
+/* ─── Topping marks using real food photos ───────────────── */
 function ToppingMark({ type, x, y, idx }: { type: string; x: number; y: number; idx: number }) {
-  const rot = (idx * 53) % 360;
-  switch (type) {
-    case "mushroom":
-      return (
-        <g transform={`translate(${x},${y})`}>
-          <rect x="-2" y="1.5" width="4" height="5" rx="1.5" fill="#D4A870"/>
-          <ellipse rx="7.5" ry="5.5" fill="#8B4F1A"/>
-          <ellipse rx="5.5" ry="3.8" cy="-0.5" fill="#C07830" opacity="0.75"/>
-          <ellipse cx="-2" cy="-2.5" rx="2.2" ry="1.3" fill="rgba(255,225,170,0.45)" transform="rotate(-25,-2,-2.5)"/>
-          <ellipse rx="7.5" ry="5.5" fill="none" stroke="rgba(60,20,0,0.25)" strokeWidth="0.7"/>
-        </g>
-      );
-    case "peppers":
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <path d="M-5.5,0 Q-5,-4 0,-5 Q5,-4 5.5,0 Q4,3.5 0,4 Q-4,3.5 -5.5,0Z" fill="#E63946"/>
-          <path d="M-3.5,0 Q-3,-2.5 0,-3.2 Q3,-2.5 3.5,0 Q2.5,2.5 0,2.8 Q-2.5,2.5 -3.5,0Z" fill="#F06070" opacity="0.6"/>
-          <path d="M0,-4.5 Q0.3,0 0,3.5" stroke="rgba(255,210,200,0.5)" strokeWidth="0.9" fill="none"/>
-          <ellipse cx="-2" cy="-2" rx="1.8" ry="1" fill="rgba(255,245,240,0.35)" transform="rotate(-25,-2,-2)"/>
-        </g>
-      );
-    case "olives":
-      return (
-        <g transform={`rotate(${rot/4},${x},${y})`}>
-          <ellipse cx={x} cy={y} rx="5.5" ry="6.5" fill="#1C2E10"/>
-          <ellipse cx={x} cy={y} rx="2.2" ry="2.8" fill="#C42020"/>
-          <ellipse cx={x-1} cy={y-2.5} rx="1.8" ry="1" fill="rgba(255,255,255,0.28)" transform={`rotate(-20,${x-1},${y-2.5})`}/>
-        </g>
-      );
-    case "corn":
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          {([-3,3] as number[]).map((dx,col) =>
-            ([-4,0,4] as number[]).map((dy,row) => (
-              <g key={`${col}-${row}`} transform={`translate(${dx},${dy})`}>
-                <ellipse rx="2.4" ry="3.2" fill="#D8A810"/>
-                <ellipse rx="1.6" ry="2.2" fill="#F0C828" opacity="0.8"/>
-                <ellipse cy="-1.2" rx="1.1" ry="0.7" fill="rgba(255,255,200,0.5)"/>
-              </g>
-            ))
-          )}
-        </g>
-      );
-    case "pepperoni":
-    case "salami": {
-      const c = type === "pepperoni" ? "#C41E2A" : "#8B1A2A";
-      const c2 = type === "pepperoni" ? "#A01520" : "#6A1220";
-      return (
-        <g>
-          <circle cx={x} cy={y} r="6.5" fill={c}/>
-          <circle cx={x} cy={y} r="5" fill={c2} opacity="0.7"/>
-          {([[ 2,-2],[-2.2, 0.8],[0.5, 2.8],[-0.5,-3],[2.8, 1.5]] as [number,number][]).map(([dx,dy],i) => (
-            <circle key={i} cx={x+dx} cy={y+dy} r="1.1" fill="rgba(255,245,230,0.88)"/>
-          ))}
-          <circle cx={x} cy={y} r="6.2" fill="none" stroke="rgba(50,5,5,0.35)" strokeWidth="1.3"/>
-          <ellipse cx={x-1.5} cy={y-2} rx="2.8" ry="1.4" fill="rgba(255,200,190,0.18)" transform={`rotate(-25,${x-1.5},${y-2})`}/>
-        </g>
-      );
-    }
-    case "chicken":
-    case "beef": {
-      const cf = type === "chicken" ? "#D4956A" : "#8B2E2E";
-      const cl = type === "chicken" ? "#E8B090" : "#A84040";
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <path d={type === "chicken"
-            ? "M-6.5,-1 Q-5,-5.5 0,-5.5 Q5.5,-4.5 6.5,0 Q5.5,4.5 1,5.5 Q-4,5.5 -6.5,-1Z"
-            : "M-5.5,-2 Q-3.5,-6 2,-5.5 Q6.5,-3 6.5,2 Q4.5,5.5 0,5.5 Q-4.5,4.5 -5.5,-2Z"}
-            fill={cf}/>
-          <path d={type === "chicken"
-            ? "M-4,-1.5 Q0,-4 4,-1.5"
-            : "M-3,-1 Q1,-4.5 4.5,-1"}
-            stroke={`rgba(70,25,0,0.45)`} strokeWidth="1.4" fill="none" strokeLinecap="round"/>
-          <ellipse cx="-1" cy="-2" rx="3" ry="1.6" fill={cl} opacity="0.4"/>
-          <ellipse cx="-1.5" cy="-2.5" rx="2.2" ry="1.1" fill="rgba(255,225,190,0.25)" transform="rotate(-20,-1.5,-2.5)"/>
-        </g>
-      );
-    }
-    case "tuna":
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <ellipse rx="6.5" ry="3.5" fill="#5A8AAF"/>
-          <ellipse rx="4.5" ry="2.2" fill="#7AAAC0" opacity="0.6"/>
-          <path d="M-6,0 Q0,-3 6,0" stroke="rgba(255,255,255,0.2)" strokeWidth="0.8" fill="none"/>
-          <ellipse cx="-1.8" cy="-1.2" rx="2.2" ry="1" fill="rgba(200,235,255,0.35)" transform="rotate(-15,-1.8,-1.2)"/>
-        </g>
-      );
-    case "spinach":
-    case "artichoke": {
-      const lc = type === "spinach" ? "#2D6A4F" : "#5A8845";
-      const lh = type === "spinach" ? "#3A8A65" : "#78B060";
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <path d="M0,-7 Q4.5,-4 4.5,0 Q4.5,5 0,7 Q-4.5,5 -4.5,0 Q-4.5,-4 0,-7Z" fill={lc}/>
-          <path d="M0,-6 Q3,-3.5 3,0 Q3,4.5 0,6 Q-3,4.5 -3,0 Q-3,-3.5 0,-6Z" fill={lh} opacity="0.45"/>
-          <path d="M0,-6.5 Q0.3,0 0,6.5" stroke="rgba(255,255,255,0.35)" strokeWidth="1" fill="none"/>
-          {([[-1.5,-2],[1.5,-1.5],[-2,1],[2,0.5]] as [number,number][]).map(([px,py],i) => (
-            <path key={i} d={`M0,${py-1} Q${px*1.2},${py} ${px*1.8},${py+1}`} stroke="rgba(255,255,255,0.2)" strokeWidth="0.7" fill="none"/>
-          ))}
-          <ellipse cx="-1.2" cy="-3" rx="1.8" ry="0.9" fill="rgba(255,255,255,0.2)" transform="rotate(-25,-1.2,-3)"/>
-        </g>
-      );
-    }
-    case "sun_tomato":
-      return (
-        <g transform={`rotate(${rot/2},${x},${y})`}>
-          <ellipse cx={x} cy={y} rx="5" ry="3.5" fill="#922B00"/>
-          <ellipse cx={x} cy={y} rx="3.5" ry="2.5" fill="#C04010" opacity="0.65"/>
-          <path d={`M${x},${y-3} L${x},${y+3} M${x-3},${y} L${x+3},${y}`} stroke="rgba(255,180,130,0.3)" strokeWidth="0.9"/>
-          <ellipse cx={x-1} cy={y-1.2} rx="1.8" ry="0.9" fill="rgba(255,210,170,0.3)" transform={`rotate(-20,${x-1},${y-1.2})`}/>
-        </g>
-      );
-    case "onion":
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <path d="M-5.5,0 Q-5,-4.5 0,-5.5 Q5,-4.5 5.5,0 Q4,4.5 0,5 Q-4,4.5 -5.5,0Z" fill="#DDD0E8"/>
-          <path d="M-3.5,0 Q-3,-2.8 0,-3.5 Q3,-2.8 3.5,0 Q2.5,2.8 0,3.2 Q-2.5,2.8 -3.5,0Z" fill="rgba(255,255,255,0.4)"/>
-          <path d="M0,-5 Q0.4,0 0,4.5" stroke="rgba(180,140,200,0.5)" strokeWidth="0.8" fill="none"/>
-          <ellipse cx="-1.5" cy="-2.5" rx="1.5" ry="0.9" fill="rgba(255,255,255,0.25)" transform="rotate(-25,-1.5,-2.5)"/>
-        </g>
-      );
-    case "truffle":
-      return (
-        <g>
-          <circle cx={x} cy={y} r="4.5" fill="#3A2820"/>
-          <circle cx={x} cy={y} r="3.2" fill="#4A3028" opacity="0.65"/>
-          {([[-1.8,-1],[1.2,0.6],[-0.5,1.8],[1.8,-1.6],[0,-0.5]] as [number,number][]).map(([dx,dy],i) => (
-            <circle key={i} cx={x+dx} cy={y+dy} r="0.75" fill="rgba(255,255,255,0.12)"/>
-          ))}
-          <ellipse cx={x-1.2} cy={y-1.8} rx="1.5" ry="0.85" fill="rgba(255,255,255,0.14)" transform={`rotate(-20,${x-1.2},${y-1.8})`}/>
-        </g>
-      );
-    case "caramelized":
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <path d="M-5.5,0 Q-4.5,-5.5 0,-6.5 Q4.5,-5.5 5.5,0 Q4,4.5 0,5.5 Q-4,4.5 -5.5,0Z" fill="#C48020"/>
-          <path d="M-3.5,0 Q-2.5,-3.5 0,-4 Q2.5,-3.5 3.5,0 Q2.5,3 0,3.5 Q-2.5,3 -3.5,0Z" fill="#E09828" opacity="0.65"/>
-          <path d="M-2.5,-2.5 Q0,-4 2.5,-2" stroke="rgba(130,65,0,0.5)" strokeWidth="1" fill="none" strokeLinecap="round"/>
-          <ellipse cx="-1.2" cy="-2" rx="2" ry="1" fill="rgba(255,240,180,0.25)" transform="rotate(-20,-1.2,-2)"/>
-        </g>
-      );
-    case "garlic":
-      return (
-        <g transform={`translate(${x},${y}) rotate(${rot})`}>
-          <path d="M0,-5.5 Q4,-3 4,1 Q2.5,4.5 0,4.5 Q-2.5,4.5 -4,1 Q-4,-3 0,-5.5Z" fill="#E8D8A8"/>
-          <path d="M0,-4.5 Q3,-2 3,1 Q2,3.5 0,3.5 Q-2,3.5 -3,1 Q-3,-2 0,-4.5Z" fill="#F5ECC0" opacity="0.65"/>
-          <circle cx="1.2" cy="0" r="1.1" fill="#C4900A" opacity="0.6"/>
-          <circle cx="-0.8" cy="1.8" r="0.9" fill="#D4A020" opacity="0.5"/>
-          <ellipse cx="-0.8" cy="-2.5" rx="1.4" ry="0.8" fill="rgba(255,255,240,0.35)" transform="rotate(-20,-0.8,-2.5)"/>
-        </g>
-      );
-    default:
-      return <circle cx={x} cy={y} r="4.5" fill="#888" opacity="0.85"/>;
-  }
+  const clipId = `tc-${idx}`;
+  const r = 9;
+  const src = TOPPING_PHOTOS[type];
+  const fallbackColor = TOPPINGS[type]?.color ?? "#888";
+  return (
+    <g>
+      <defs>
+        <clipPath id={clipId}>
+          <circle cx={x} cy={y} r={r}/>
+        </clipPath>
+      </defs>
+      <circle cx={x} cy={y} r={r + 1.5} fill="rgba(255,255,255,0.55)"/>
+      {src ? (
+        <image
+          href={src}
+          x={x - r} y={y - r}
+          width={r * 2} height={r * 2}
+          clipPath={`url(#${clipId})`}
+          preserveAspectRatio="xMidYMid slice"
+        />
+      ) : (
+        <circle cx={x} cy={y} r={r} fill={fallbackColor} opacity="0.85"/>
+      )}
+      <circle cx={x} cy={y} r={r} fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+    </g>
+  );
 }
 
-/* ─── Realistic Pizza Canvas ────────────────────────────── */
-const CHAR_MARKS = [
-  {x:100,y:13, rx:7,  ry:3,  rot:10},
-  {x:147,y:27, rx:5.5,ry:2.5,rot:45},
-  {x:179,y:58, rx:5,  ry:2.5,rot:75},
-  {x:188,y:103,rx:6,  ry:2.5,rot:2},
-  {x:172,y:152,rx:5,  ry:2,  rot:35},
-  {x:138,y:182,rx:5.5,ry:2.5,rot:55},
-  {x:100,y:190,rx:6,  ry:2.5,rot:0},
-  {x:62, y:182,rx:5,  ry:2,  rot:125},
-  {x:28, y:150,rx:5.5,ry:2.5,rot:155},
-  {x:14, y:103,rx:6,  ry:2.5,rot:175},
-  {x:30, y:57, rx:5,  ry:2.5,rot:220},
-  {x:60, y:27, rx:5.5,ry:2.5,rot:250},
-];
-
-const CHEESE_BLOBS = [
-  {cx:86,  cy:86,  rx:24, ry:19, rot:-22},
-  {cx:113, cy:82,  rx:22, ry:17, rot:18},
-  {cx:76,  cy:110, rx:20, ry:18, rot:-12},
-  {cx:106, cy:116, rx:23, ry:18, rot:28},
-  {cx:131, cy:95,  rx:18, ry:21, rot:-32},
-  {cx:90,  cy:133, rx:21, ry:16, rot:12},
-  {cx:119, cy:131, rx:18, ry:20, rot:-18},
-  {cx:68,  cy:88,  rx:16, ry:14, rot:8},
-  {cx:135, cy:125, rx:14, ry:17, rot:22},
-];
-
-const CHEESE_BUBBLES = [
-  {x:88, y:80,  r:5.5, op:0.65},
-  {x:113,y:75,  r:4.5, op:0.55},
-  {x:74, y:105, r:4,   op:0.6},
-  {x:126,y:98,  r:5,   op:0.6},
-  {x:94, y:123, r:4.5, op:0.55},
-  {x:116,y:121, r:5,   op:0.65},
-  {x:102,y:92,  r:4,   op:0.5},
-  {x:78, y:128, r:3.5, op:0.45},
-  {x:130,y:115, r:3.5, op:0.5},
-];
-
-function PizzaCanvas({ size, dough, sauce, cheese, toppings }: {
-  size: SizeKey; dough: DoughKey; sauce: SauceKey; cheese: CheeseKey; toppings: string[];
+/* ─── Photo-based Pizza Canvas ──────────────────────────── */
+function PizzaCanvas({ sauce, toppings }: {
+  sauce: SauceKey; toppings: string[];
 }) {
-  const sauceGradId = SAUCES[sauce].gradId;
-  const cheeseGradId = CHEESES[cheese].gradId;
-  const bubbleColor = cheese === "triple" ? "#D4980A" : cheese === "vegan" ? "#C4901A" : "#E8A028";
-  const crustLight  = dough === "wheat" ? "#CC8A3A" : dough === "stuffed" ? "#E8C870" : "#E0A84A";
-  const crustDark   = dough === "wheat" ? "#8B5015" : "#7A3A10";
-
   const slotPairs: {type:string;x:number;y:number;idx:number}[] = [];
   if (toppings.length > 0) {
     toppings.forEach((top, ti) => {
@@ -312,146 +179,35 @@ function PizzaCanvas({ size, dough, sauce, cheese, toppings }: {
   }
 
   return (
-    <svg viewBox="0 0 200 205" className="w-full max-w-[380px] mx-auto" aria-label="תצוגת פיצה בהתאמה אישית">
-      <defs>
-        {/* Crust gradient */}
-        <radialGradient id="crust-outer" cx="50%" cy="48%" r="52%">
-          <stop offset="0%"   stopColor={crustLight}/>
-          <stop offset="62%"  stopColor="#B8782A"/>
-          <stop offset="82%"  stopColor="#8A4C12"/>
-          <stop offset="100%" stopColor={crustDark}/>
-        </radialGradient>
-        <radialGradient id="crust-top" cx="50%" cy="42%" r="50%">
-          <stop offset="0%"   stopColor={crustLight} stopOpacity="0.9"/>
-          <stop offset="100%" stopColor="#B8782A"    stopOpacity="0.4"/>
-        </radialGradient>
+    <div
+      className="relative w-full max-w-[380px] mx-auto"
+      aria-label="תצוגת פיצה בהתאמה אישית"
+    >
+      {/* Real pizza photo — changes with sauce selection */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={PIZZA_PHOTOS[sauce] ?? PIZZA_PHOTOS.tomato}
+        alt="פיצה"
+        className="w-full rounded-full object-cover aspect-square"
+        style={{
+          boxShadow: "0 20px 60px rgba(92,45,14,0.38)",
+          transition: "opacity 0.4s ease",
+        }}
+      />
 
-        {/* Sauce gradients */}
-        <radialGradient id="s-tomato" cx="42%" cy="38%" r="65%">
-          <stop offset="0%"   stopColor="#E03535"/>
-          <stop offset="60%"  stopColor="#C02020"/>
-          <stop offset="100%" stopColor="#8B0F0F"/>
-        </radialGradient>
-        <radialGradient id="s-cream" cx="45%" cy="40%" r="60%">
-          <stop offset="0%"   stopColor="#FFFDF6"/>
-          <stop offset="60%"  stopColor="#F8EDD8"/>
-          <stop offset="100%" stopColor="#E8D0B0"/>
-        </radialGradient>
-        <radialGradient id="s-pesto" cx="42%" cy="38%" r="65%">
-          <stop offset="0%"   stopColor="#3D8060"/>
-          <stop offset="60%"  stopColor="#2D6A4F"/>
-          <stop offset="100%" stopColor="#1A3D2A"/>
-        </radialGradient>
-        <radialGradient id="s-bbq" cx="42%" cy="38%" r="65%">
-          <stop offset="0%"   stopColor="#8B3510"/>
-          <stop offset="60%"  stopColor="#6A2508"/>
-          <stop offset="100%" stopColor="#3A1005"/>
-        </radialGradient>
-
-        {/* Cheese gradients */}
-        <radialGradient id="c-mozz" cx="45%" cy="42%" r="58%">
-          <stop offset="0%"   stopColor="#FFFFF5"/>
-          <stop offset="55%"  stopColor="#F8F2D8"/>
-          <stop offset="100%" stopColor="#E8D89A"/>
-        </radialGradient>
-        <radialGradient id="c-triple" cx="45%" cy="42%" r="58%">
-          <stop offset="0%"   stopColor="#FFFCE0"/>
-          <stop offset="55%"  stopColor="#F5E060"/>
-          <stop offset="100%" stopColor="#D8BC20"/>
-        </radialGradient>
-        <radialGradient id="c-vegan" cx="45%" cy="42%" r="58%">
-          <stop offset="0%"   stopColor="#F8F4E8"/>
-          <stop offset="55%"  stopColor="#EAD898"/>
-          <stop offset="100%" stopColor="#D0BC70"/>
-        </radialGradient>
-
-        {/* Crust noise filter */}
-        <filter id="crust-tex" x="0%" y="0%" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="5" result="noise"/>
-          <feColorMatrix in="noise" type="matrix"
-            values="0 0 0 0 0.35  0 0 0 0 0.18  0 0 0 0 0  0 0 0 0.22 0"
-            result="tinted"/>
-          <feComposite in="tinted" in2="SourceGraphic" operator="in" result="masked"/>
-          <feBlend in="SourceGraphic" in2="masked" mode="multiply"/>
-        </filter>
-
-        {/* Pizza drop shadow */}
-        <filter id="pizza-shadow" x="-15%" y="-10%" width="130%" height="135%">
-          <feDropShadow dx="0" dy="10" stdDeviation="14" floodOpacity="0.28" floodColor="#5C2D0E"/>
-        </filter>
-
-        {/* Plate shadow ring */}
-        <radialGradient id="plate-rim" cx="50%" cy="50%" r="50%">
-          <stop offset="88%"  stopColor="rgba(210,190,165,0)" />
-          <stop offset="100%" stopColor="rgba(180,155,120,0.35)"/>
-        </radialGradient>
-      </defs>
-
-      {/* ── Plate shadow ── */}
-      <ellipse cx="100" cy="200" rx="88" ry="8" fill="rgba(0,0,0,0.13)"/>
-
-      {/* ── Plate rim ── */}
-      <circle cx="100" cy="101" r="97" fill="url(#plate-rim)" filter="url(#pizza-shadow)"/>
-      <circle cx="100" cy="101" r="95" fill="#F9F5F0"/>
-      <circle cx="100" cy="101" r="92" fill="#EDE5D8" opacity="0.6"/>
-
-      {/* ── Crust outer ring ── */}
-      <circle cx="100" cy="100" r="89" fill="url(#crust-outer)"/>
-      <circle cx="100" cy="100" r="89" fill="url(#crust-top)" filter="url(#crust-tex)"/>
-
-      {/* Stuffed crust cheese ring */}
-      {dough === "stuffed" && (
-        <circle cx="100" cy="100" r="84" fill="none"
-          stroke="rgba(255,240,200,0.6)" strokeWidth="4"/>
+      {/* Topping images overlaid as circular photos */}
+      {toppings.length > 0 && (
+        <svg
+          viewBox="0 0 200 200"
+          className="absolute inset-0 w-full h-full"
+          style={{ pointerEvents: "none" }}
+        >
+          {slotPairs.map((t, i) => (
+            <ToppingMark key={i} type={t.type} x={t.x} y={t.y} idx={t.idx}/>
+          ))}
+        </svg>
       )}
-
-      {/* ── Char marks on crust ── */}
-      {CHAR_MARKS.map((m, i) => (
-        <ellipse key={i}
-          cx={m.x} cy={m.y} rx={m.rx} ry={m.ry}
-          fill="rgba(38,14,2,0.42)"
-          transform={`rotate(${m.rot},${m.x},${m.y})`}
-          opacity="0.75"/>
-      ))}
-
-      {/* ── Sauce ── */}
-      <circle cx="100" cy="100" r="80" fill={`url(#${sauceGradId})`}/>
-
-      {/* ── Cheese base ── */}
-      <circle cx="100" cy="100" r="78" fill={`url(#${cheeseGradId})`} opacity="0.9"/>
-
-      {/* ── Organic cheese blobs ── */}
-      {CHEESE_BLOBS.map((b, i) => (
-        <ellipse key={i} cx={b.cx} cy={b.cy} rx={b.rx} ry={b.ry}
-          fill={`url(#${cheeseGradId})`} opacity="0.62"
-          transform={`rotate(${b.rot},${b.cx},${b.cy})`}/>
-      ))}
-
-      {/* ── Melted cheese bubbles ── */}
-      {CHEESE_BUBBLES.map((b, i) => (
-        <circle key={i} cx={b.x} cy={b.y} r={b.r} fill={bubbleColor} opacity={b.op}/>
-      ))}
-
-      {/* ── Sauce peeking through cheese ── */}
-      {CHEESE_BLOBS.slice(0,3).map((_b, i) => (
-        <circle key={i}
-          cx={[60,140,100][i]!} cy={[70,68,135][i]!} r="5"
-          fill={`url(#${sauceGradId})`} opacity="0.35"/>
-      ))}
-
-      {/* ── Toppings ── */}
-      {slotPairs.map((t, i) => (
-        <ToppingMark key={i} type={t.type} x={t.x} y={t.y} idx={t.idx}/>
-      ))}
-
-      {/* ── Cheese gloss highlight ── */}
-      <ellipse cx="80" cy="70" rx="24" ry="11"
-        fill="rgba(255,255,255,0.14)" transform="rotate(-22,80,70)"/>
-
-      {/* ── Plate inner shadow ── */}
-      <circle cx="100" cy="100" r="89" fill="none"
-        stroke="rgba(150,100,50,0.12)" strokeWidth="3"/>
-    </svg>
+    </div>
   );
 }
 
@@ -570,8 +326,8 @@ export default function BuildPage() {
               <p className="text-2xl font-black text-white font-bebas leading-none">₪{totalPrice}</p>
             </div>
 
-            {/* Realistic pizza */}
-            <PizzaCanvas size={size} dough={dough} sauce={sauce} cheese={cheese} toppings={toppings}/>
+            {/* Real pizza photo with topping overlay */}
+            <PizzaCanvas sauce={sauce} toppings={toppings}/>
 
             {/* Name input */}
             <div className="w-full max-w-xs">
@@ -661,7 +417,13 @@ export default function BuildPage() {
                     borderColor: sauce===key ? "#E63946" : "#F0D8C8",
                     background:  sauce===key ? "rgba(230,57,70,0.05)" : "white",
                   }}>
-                  <div className="h-9 w-9 rounded-full shrink-0 shadow-md" style={{background:s.swatch}}/>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={SAUCE_PHOTOS[key]}
+                    alt={s.label}
+                    className="h-9 w-9 rounded-full shrink-0 shadow-md object-cover"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.background = s.swatch; (e.currentTarget as HTMLImageElement).src = ""; }}
+                  />
                   <div>
                     <p className="font-black text-sm text-pp-dark" style={{fontFamily:"var(--font-rubik)"}}>{s.label}</p>
                     <p className="text-[10px] text-pp-muted">{s.desc}</p>
@@ -683,7 +445,13 @@ export default function BuildPage() {
                     borderColor: cheese===key ? "#E63946" : "#F0D8C8",
                     background:  cheese===key ? "rgba(230,57,70,0.05)" : "white",
                   }}>
-                  <div className="h-9 w-9 rounded-full shadow-md" style={{background:c.swatch}}/>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={CHEESE_PHOTOS[key]}
+                    alt={c.label}
+                    className="h-9 w-9 rounded-full shadow-md object-cover"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.background = c.swatch; (e.currentTarget as HTMLImageElement).src = ""; }}
+                  />
                   <p className="font-black text-xs text-pp-dark text-center" style={{fontFamily:"var(--font-rubik)"}}>{c.label}</p>
                   {c.extra > 0 && <p className="text-pp-red font-bold text-xs">+₪{c.extra}</p>}
                 </button>
@@ -727,15 +495,25 @@ export default function BuildPage() {
                       transform: sel ? "scale(1.03)" : "scale(1)",
                     }}>
 
-                    {/* Food emoji in warm square */}
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center text-4xl shadow-sm transition-all"
+                    {/* Real food photo */}
+                    <div className="w-14 h-14 rounded-xl overflow-hidden shadow-sm transition-all"
                       style={{
-                        background: sel
-                          ? `linear-gradient(145deg,${t.color}25,${t.color}12)`
-                          : "linear-gradient(145deg,#FFF5EC,#FFE8D6)",
-                        fontSize: "2rem",
+                        outline: sel ? `2.5px solid ${t.color}` : "none",
+                        outlineOffset: "2px",
                       }}>
-                      {t.emoji}
+                      {TOPPING_PHOTOS[key] ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={TOPPING_PHOTOS[key]}
+                          alt={t.label}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-4xl"
+                          style={{background: "linear-gradient(145deg,#FFF5EC,#FFE8D6)", fontSize: "2rem"}}>
+                          {t.emoji}
+                        </div>
+                      )}
                     </div>
 
                     <p className="text-[11px] font-bold text-pp-dark leading-tight text-center">{t.label}</p>
