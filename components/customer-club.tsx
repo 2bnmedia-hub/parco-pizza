@@ -61,7 +61,7 @@ interface Confetti {
   size: number;
 }
 
-const CONFETTI_COLORS = ["#E63946", "#F4A261", "#E9C46A", "#FFFFFF", "#2D6A4F", "#4ade80"];
+const CONFETTI_COLORS = ["#C62828", "#F4A261", "#E9C46A", "#FFFFFF", "#2E7D32", "#4ade80"];
 
 function makeConfetti(): Confetti[] {
   return Array.from({ length: 30 }, (_, i) => ({
@@ -96,7 +96,7 @@ export function CustomerClub() {
       id="club"
       className="relative overflow-hidden py-24 md:py-32"
       aria-labelledby="club-heading"
-      style={{ background: "linear-gradient(135deg, #E63946 0%, #c62d38 40%, #b82233 100%)" }}
+      style={{ background: "linear-gradient(135deg, #C62828 0%, #9b1a1a 40%, #b82233 100%)" }}
     >
       {/* Decorative circles */}
       <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/5" aria-hidden="true" />
@@ -106,7 +106,7 @@ export function CustomerClub() {
       <div
         className="pointer-events-none absolute top-0 right-0 h-80 w-80 opacity-10"
         style={{
-          background: "radial-gradient(circle, #2D6A4F 0%, transparent 70%)",
+          background: "radial-gradient(circle, #2E7D32 0%, transparent 70%)",
           transform: "translate(30%, -30%)",
         }}
         aria-hidden="true"

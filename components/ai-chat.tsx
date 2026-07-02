@@ -49,7 +49,7 @@ function IconSpice({ level }: { level: "none" | "low" | "high" }) {
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2C7 2 4 5 4 8a3 3 0 0 0 6 0c0-3-3-6-3-6z" stroke="currentColor" strokeWidth="1.2" fill="none"/></svg>
   );
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C7 1 3 5 3 8.5a4 4 0 0 0 8 0C11 5 7 1 7 1z" stroke="currentColor" strokeWidth="1.2" fill="rgba(230,57,70,0.2)"/><path d="M7 5v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C7 1 3 5 3 8.5a4 4 0 0 0 8 0C11 5 7 1 7 1z" stroke="currentColor" strokeWidth="1.2" fill="rgba(198,40,40,0.2)"/><path d="M7 5v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
   );
 }
 
@@ -62,7 +62,7 @@ function IconCream() {
 }
 
 function IconBasil() {
-  return <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12 C7 12 2 9 2 5 C2 3 3.5 2 5 2.5 C5.5 1.5 6.5 1 7 1 C7.5 1 8.5 1.5 9 2.5 C10.5 2 12 3 12 5 C12 9 7 12 7 12Z" stroke="currentColor" strokeWidth="1.2" fill="rgba(45,106,79,0.2)"/><path d="M7 12 V6" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/></svg>;
+  return <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12 C7 12 2 9 2 5 C2 3 3.5 2 5 2.5 C5.5 1.5 6.5 1 7 1 C7.5 1 8.5 1.5 9 2.5 C10.5 2 12 3 12 5 C12 9 7 12 7 12Z" stroke="currentColor" strokeWidth="1.2" fill="rgba(46,125,50,0.2)"/><path d="M7 12 V6" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/></svg>;
 }
 
 function IconFish() {
@@ -90,7 +90,7 @@ function MarcoAvatar() {
   return (
     <div
       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-inner"
-      style={{ background: "linear-gradient(135deg, #2D6A4F, #1a4a35)" }}
+      style={{ background: "linear-gradient(135deg, #2E7D32, #1b5e20)" }}
       aria-hidden="true"
     >
       {/* Chef hat + basil leaf */}
@@ -352,11 +352,11 @@ export function AiChat() {
           className="relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pp-red"
           style={{
             background: open
-              ? "linear-gradient(135deg, #1A0806, #2D0A05)"
-              : "linear-gradient(135deg, #2D6A4F, #1a4a35)",
+              ? "linear-gradient(135deg, #2B2B2B, #2D0A05)"
+              : "linear-gradient(135deg, #2E7D32, #1b5e20)",
             boxShadow: open
               ? "0 4px 20px rgba(26,8,6,0.4)"
-              : "0 4px 20px rgba(45,106,79,0.5)",
+              : "0 4px 20px rgba(46,125,50,0.5)",
           }}
         >
           {open ? (
@@ -369,7 +369,7 @@ export function AiChat() {
           {!open && (
             <span
               className="absolute inset-0 rounded-full animate-ping opacity-30"
-              style={{ background: "#2D6A4F" }}
+              style={{ background: "#2E7D32" }}
               aria-hidden="true"
             />
           )}
@@ -417,7 +417,7 @@ export function AiChat() {
             onTouchStart={startDrag}
             className="flex items-center gap-3 px-4 py-3.5 text-white shrink-0 rounded-t-3xl select-none"
             style={{
-              background: "linear-gradient(135deg, #2D6A4F, #1a4a35)",
+              background: "linear-gradient(135deg, #2E7D32, #1b5e20)",
               cursor: isDragging.current ? "grabbing" : "grab",
             }}
             aria-label="גרור להזזת הצ'אט"
@@ -460,7 +460,7 @@ export function AiChat() {
             aria-live="polite"
             aria-atomic="false"
             className="flex-1 min-h-0 overflow-y-auto bg-pp-surface p-4 space-y-3"
-            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(45,106,79,0.3) transparent" }}
+            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(46,125,50,0.3) transparent" }}
           >
             {messages.map((msg, i) => {
               const isLast = i === messages.length - 1;
@@ -476,7 +476,7 @@ export function AiChat() {
                     <div className="flex items-center gap-1.5">
                       <div
                         className="flex h-6 w-6 items-center justify-center rounded-full shrink-0"
-                        style={{ background: "linear-gradient(135deg, #2D6A4F, #1a4a35)" }}
+                        style={{ background: "linear-gradient(135deg, #2E7D32, #1b5e20)" }}
                         aria-hidden="true"
                       >
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -531,7 +531,7 @@ export function AiChat() {
                               </span>
                             )}
                             {pizza.sauce.includes("pesto") && (
-                              <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold" style={{ background: "rgba(45,106,79,0.1)", color: "#2D6A4F" }}>
+                              <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold" style={{ background: "rgba(46,125,50,0.1)", color: "#2E7D32" }}>
                                 <IconBasil /> פסטו
                               </span>
                             )}
@@ -550,17 +550,17 @@ export function AiChat() {
                           onClick={() => handleButton(btn.label)}
                           className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold transition-all hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-pp-red"
                           style={{
-                            borderColor: "#2D6A4F",
-                            color: "#2D6A4F",
+                            borderColor: "#2E7D32",
+                            color: "#2E7D32",
                             background: "white",
                           }}
                           onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.background = "#2D6A4F";
+                            (e.currentTarget as HTMLButtonElement).style.background = "#2E7D32";
                             (e.currentTarget as HTMLButtonElement).style.color = "white";
                           }}
                           onMouseLeave={(e) => {
                             (e.currentTarget as HTMLButtonElement).style.background = "white";
-                            (e.currentTarget as HTMLButtonElement).style.color = "#2D6A4F";
+                            (e.currentTarget as HTMLButtonElement).style.color = "#2E7D32";
                           }}
                         >
                           {btn.icon}
@@ -577,14 +577,14 @@ export function AiChat() {
           {/* Footer bar */}
           <div
             className="shrink-0 flex items-center justify-between px-4 py-2.5 rounded-b-3xl border-t border-pp-border/30"
-            style={{ background: "#FFFDF9" }}
+            style={{ background: "#FFF8E7" }}
           >
             <span className="text-[10px] text-pp-muted/60">
               מארקו — הסייען של פארקו פיצה
             </span>
             <div
               className="h-2 w-2 rounded-full"
-              style={{ background: "#2D6A4F" }}
+              style={{ background: "#2E7D32" }}
               title="מחובר"
               aria-label="מארקו מחובר"
             />

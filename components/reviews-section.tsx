@@ -136,7 +136,7 @@ export function ReviewsSection() {
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full flex items-center justify-center shrink-0 font-black text-white text-sm"
-                      style={{background:"#E63946"}}>
+                      style={{background:"#C62828"}}>
                       {r.avatar}
                     </div>
                     <div>
@@ -144,7 +144,7 @@ export function ReviewsSection() {
                         <p className="font-bold text-sm text-pp-dark">{r.name}</p>
                         {r.verified && (
                           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-label="רכישה מאומתת">
-                            <circle cx="6.5" cy="6.5" r="6.5" fill="#2D6A4F"/>
+                            <circle cx="6.5" cy="6.5" r="6.5" fill="#2E7D32"/>
                             <path d="M3.5 6.5L5.5 8.5L9.5 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         )}
@@ -156,7 +156,7 @@ export function ReviewsSection() {
                 </div>
                 <p className="text-sm text-pp-muted leading-relaxed">&quot;{r.text}&quot;</p>
                 <div className="mt-3 inline-flex rounded-full px-3 py-1 text-[10px] font-semibold"
-                  style={{background:"rgba(230,57,70,0.07)",color:"#E63946"}}>
+                  style={{background:"rgba(198,40,40,0.07)",color:"#C62828"}}>
                   {r.item}
                 </div>
               </div>
@@ -167,7 +167,7 @@ export function ReviewsSection() {
         {/* Write review */}
         <div className="text-center">
           {submitted && (
-            <p className="text-sm text-pp-green font-bold mb-4" style={{color:"#2D6A4F"}}>
+            <p className="text-sm text-pp-green font-bold mb-4" style={{color:"#2E7D32"}}>
               תודה! הביקורת שלך נוספה ✓
             </p>
           )}

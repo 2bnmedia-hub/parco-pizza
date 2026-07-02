@@ -2,18 +2,18 @@
 
 @theme {
   /* ── Parco Pizza brand colors ─────────────────────────── */
-  --color-pp-bg:       #FFFDF9;
-  --color-pp-surface:  #FFF5E8;
+  --color-pp-bg:       #FFF8E7;
+  --color-pp-surface:  #FFF3D5;
   --color-pp-card:     #FFFFFF;
-  --color-pp-red:      #E63946;
+  --color-pp-red:      #C62828;
   --color-pp-orange:   #F4A261;
   --color-pp-yellow:   #E9C46A;
-  --color-pp-dark:     #1A0806;
-  --color-pp-muted:    #8B6347;
-  --color-pp-border:   #F0D8C0;
-  --color-pp-green:       #2D6A4F;
-  --color-pp-green-light: #52B788;
-  --color-pp-green-pale:  #D8F3DC;
+  --color-pp-dark:     #2B2B2B;
+  --color-pp-muted:    #757575;
+  --color-pp-border:   #DEDED5;
+  --color-pp-green:       #2E7D32;
+  --color-pp-green-light: #4CAF50;
+  --color-pp-green-pale:  #E8F5E9;
 
   /* ── Legacy brand colors ────────────────────────────── */
   --color-brand-dark:    #fafaf8;
@@ -117,8 +117,8 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(230,57,70,0.25), 0 4px 16px rgba(230,57,70,0.15); }
-  50%       { box-shadow: 0 0 40px rgba(230,57,70,0.5),  0 8px 32px rgba(230,57,70,0.3);  }
+  0%, 100% { box-shadow: 0 0 20px rgba(198,40,40,0.25), 0 4px 16px rgba(198,40,40,0.15); }
+  50%       { box-shadow: 0 0 40px rgba(198,40,40,0.5),  0 8px 32px rgba(198,40,40,0.3);  }
 }
 
 @keyframes spin-slow {
@@ -154,8 +154,8 @@ html {
 }
 
 body {
-  background: #FFFDF9;
-  color: #1A0806;
+  background: #FFF8E7;
+  color: #2B2B2B;
   direction: rtl;
   font-family: var(--font-heebo), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -174,8 +174,8 @@ body::after {
 
 /* Custom text selection */
 ::selection {
-  background: rgba(230, 57, 70, 0.2);
-  color: #1A0806;
+  background: rgba(198, 40, 40, 0.2);
+  color: #2B2B2B;
 }
 
 /* ── Scroll-reveal ────────────────────────────────────── */
@@ -204,18 +204,18 @@ body::after {
 @layer components {
   .btn-primary {
     display: inline-block;
-    background: linear-gradient(135deg, #E63946, #c8303c);
+    background: linear-gradient(135deg, #C62828, #9b1a1a);
     color: #FFFFFF;
     border-radius: 9999px;
     font-weight: 700;
     cursor: pointer;
     letter-spacing: 0.05em;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 4px 20px rgba(230, 57, 70, 0.25);
+    box-shadow: 0 4px 20px rgba(198, 40, 40, 0.25);
   }
   .btn-primary:hover {
     transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 12px 40px rgba(230, 57, 70, 0.45);
+    box-shadow: 0 12px 40px rgba(198, 40, 40, 0.45);
   }
   .btn-primary:active {
     transform: translateY(0) scale(0.99);
@@ -223,15 +223,15 @@ body::after {
 
   .btn-outline {
     display: inline-block;
-    border: 2px solid #E63946;
-    color: #E63946;
+    border: 2px solid #C62828;
+    color: #C62828;
     border-radius: 9999px;
     font-weight: 700;
     cursor: pointer;
     transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
   .btn-outline:hover {
-    background: #E63946;
+    background: #C62828;
     color: #FFFFFF;
     transform: translateY(-2px);
   }
@@ -260,7 +260,7 @@ body::after {
   }
   .card-premium:hover {
     transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(230, 57, 70, 0.12), 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 24px 60px rgba(198, 40, 40, 0.12), 0 8px 24px rgba(0,0,0,0.08);
   }
 }
 
@@ -276,7 +276,7 @@ body::after {
 
 /* ── Red shimmer text ─────────────────────────────────── */
 .red-text-gradient {
-  background: linear-gradient(135deg, #E63946 0%, #F4A261 50%, #E63946 100%);
+  background: linear-gradient(135deg, #C62828 0%, #F4A261 50%, #C62828 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -292,11 +292,11 @@ body::after {
 
 /* ── Section dark with ambient glow ───────────────────── */
 .section-dark-ambient {
-  background: #1A0806;
+  background: #1C1C1C;
   background-image:
-    radial-gradient(ellipse at 15% 50%, rgba(230,57,70,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 50%, rgba(198,40,40,0.10) 0%, transparent 55%),
     radial-gradient(ellipse at 85% 20%, rgba(244,162,97,0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 90%, rgba(230,57,70,0.06) 0%, transparent 60%);
+    radial-gradient(ellipse at 50% 90%, rgba(198,40,40,0.06) 0%, transparent 60%);
 }
 
 /* ── Gradient border card ─────────────────────────────── */
@@ -309,7 +309,7 @@ body::after {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(230,57,70,0.4), transparent 50%, rgba(244,162,97,0.3));
+  background: linear-gradient(135deg, rgba(198,40,40,0.4), transparent 50%, rgba(244,162,97,0.3));
   z-index: -1;
 }
 
@@ -343,7 +343,7 @@ body::after {
   right: 0;
   width: 0;
   height: 1.5px;
-  background: linear-gradient(90deg, #52B788, #2D6A4F);
+  background: linear-gradient(90deg, #4CAF50, #2E7D32);
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .nav-link:hover::after {
@@ -360,16 +360,16 @@ body::after {
 
 /* ── Basil green accent ───────────────────────────────── */
 .basil-accent {
-  color: #2D6A4F;
+  color: #2E7D32;
 }
 .basil-bg {
-  background: linear-gradient(135deg, #2D6A4F, #1a4a35);
+  background: linear-gradient(135deg, #2E7D32, #1b5e20);
 }
 .basil-border {
-  border-color: rgba(45, 106, 79, 0.3);
+  border-color: rgba(46, 125, 50, 0.3);
 }
 .basil-glow {
-  box-shadow: 0 0 20px rgba(45, 106, 79, 0.3);
+  box-shadow: 0 0 20px rgba(46, 125, 50, 0.3);
 }
 
 /* ── Accessibility — Skip to content ─────────────────── */
@@ -378,7 +378,7 @@ body::after {
   top: -100%;
   right: 50%;
   transform: translateX(50%);
-  background: #E63946;
+  background: #C62828;
   color: #ffffff;
   padding: 10px 24px;
   border-radius: 0 0 12px 12px;
@@ -398,7 +398,7 @@ body::after {
 
 /* ── Focus indicators — visible for keyboard users ───── */
 :focus-visible {
-  outline: 2.5px solid #E63946;
+  outline: 2.5px solid #C62828;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -451,9 +451,9 @@ footer :focus-visible {
   background: transparent;
 }
 .chat-scroll::-webkit-scrollbar-thumb {
-  background: rgba(45, 106, 79, 0.35);
+  background: rgba(46, 125, 50, 0.35);
   border-radius: 999px;
 }
 .chat-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(45, 106, 79, 0.6);
+  background: rgba(46, 125, 50, 0.6);
 }

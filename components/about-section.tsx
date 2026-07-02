@@ -24,7 +24,7 @@ function IconStar() {
         stroke="currentColor"
         strokeWidth="1.8"
         strokeLinejoin="round"
-        fill="rgba(230,57,70,0.12)"
+        fill="rgba(198,40,40,0.12)"
       />
     </svg>
   );
@@ -38,7 +38,7 @@ function IconShield() {
         stroke="currentColor"
         strokeWidth="1.8"
         strokeLinejoin="round"
-        fill="rgba(230,57,70,0.08)"
+        fill="rgba(198,40,40,0.08)"
       />
       <path d="M10.5 15.5 L14 19 L21.5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -53,7 +53,7 @@ function IconHeart() {
         stroke="currentColor"
         strokeWidth="1.8"
         strokeLinejoin="round"
-        fill="rgba(230,57,70,0.12)"
+        fill="rgba(198,40,40,0.12)"
       />
     </svg>
   );
@@ -175,7 +175,7 @@ export function AboutSection() {
               <div
                 className="absolute -top-6 -right-6 w-24 h-24 opacity-20 pointer-events-none"
                 style={{
-                  backgroundImage: "radial-gradient(#E63946 1.5px, transparent 1.5px)",
+                  backgroundImage: "radial-gradient(#C62828 1.5px, transparent 1.5px)",
                   backgroundSize: "10px 10px",
                 }}
               />

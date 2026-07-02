@@ -83,8 +83,8 @@ const FEATURES = [
     title: "בנה פיצה",
     desc: "בחר גודל, עיסה, רוטב וטופינגס — הפיצה שלך, הסגנון שלך",
     badge: "חדש",
-    color: "#E63946",
-    bg: "linear-gradient(135deg,rgba(230,57,70,0.08),rgba(230,57,70,0.03))",
+    color: "#C62828",
+    bg: "linear-gradient(135deg,rgba(198,40,40,0.08),rgba(198,40,40,0.03))",
   },
   {
     href: "/events",
@@ -99,8 +99,8 @@ const FEATURES = [
     Icon: IconCatering,
     title: "קייטרינג עסקי",
     desc: "צהריים לצוות, ישיבות וכנסים — שירות B2B מקצועי",
-    color: "#2D6A4F",
-    bg: "linear-gradient(135deg,rgba(45,106,79,0.08),rgba(45,106,79,0.03))",
+    color: "#2E7D32",
+    bg: "linear-gradient(135deg,rgba(46,125,50,0.08),rgba(46,125,50,0.03))",
   },
   {
     href: "/loyalty",
@@ -115,7 +115,7 @@ const FEATURES = [
     Icon: IconShop,
     title: "חנות",
     desc: "רטבים ביתיים, תבלינים, ערכות פיצה ומרצ׳נדייז מיוחד",
-    color: "#8B6347",
+    color: "#6D4C41",
     bg: "linear-gradient(135deg,rgba(139,99,71,0.08),rgba(139,99,71,0.03))",
   },
   {
@@ -123,8 +123,8 @@ const FEATURES = [
     Icon: IconReviews,
     title: "ביקורות",
     desc: "ראה מה אומרת הקהילה, ושתף את החוויה שלך",
-    color: "#E63946",
-    bg: "linear-gradient(135deg,rgba(230,57,70,0.06),rgba(230,57,70,0.02))",
+    color: "#C62828",
+    bg: "linear-gradient(135deg,rgba(198,40,40,0.06),rgba(198,40,40,0.02))",
   },
 ];
 

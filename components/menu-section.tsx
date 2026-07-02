@@ -165,7 +165,7 @@ export function MenuSection() {
       id="menu"
       className="py-24 md:py-32 overflow-hidden"
       style={{
-        background: "linear-gradient(160deg, #FFF5E8 0%, #FFFDF9 50%, #FFF5E8 100%)",
+        background: "linear-gradient(160deg, #FFF3D5 0%, #FFF8E7 50%, #FFF3D5 100%)",
       }}
     >
       <div className="mx-auto max-w-7xl px-6">

@@ -74,7 +74,7 @@ export default function ShopPage() {
               <button key={cat} onClick={() => setActiveCategory(cat)}
                 className="rounded-full px-4 py-2 text-sm font-bold transition-all"
                 style={{
-                  background: activeCategory===cat ? "#E63946" : "#F5EDE6",
+                  background: activeCategory===cat ? "#C62828" : "#F5EDE6",
                   color: activeCategory===cat ? "white" : "#8B6347",
                 }}>
                 {cat}
@@ -84,7 +84,7 @@ export default function ShopPage() {
           {cartCount > 0 && (
             <button onClick={() => setShowCart(true)}
               className="relative flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-black text-white"
-              style={{background:"#1A0806"}}>
+              style={{background:"#2B2B2B"}}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
@@ -105,7 +105,7 @@ export default function ShopPage() {
               <div className="relative flex items-center justify-center py-10 text-7xl" style={{background:"linear-gradient(145deg,#FFF0E6,#FFE8D6)"}}>
                 {product.emoji}
                 {product.badge && (
-                  <div className="absolute top-3 right-3 rounded-full px-2.5 py-1 text-[10px] font-black text-white font-bebas tracking-wide" style={{background:"#E63946"}}>
+                  <div className="absolute top-3 right-3 rounded-full px-2.5 py-1 text-[10px] font-black text-white font-bebas tracking-wide" style={{background:"#C62828"}}>
                     {product.badge}
                   </div>
                 )}
@@ -125,7 +125,7 @@ export default function ShopPage() {
                   <button
                     onClick={() => addToCart(product)}
                     className="rounded-xl px-4 py-2 text-xs font-black text-white transition-all"
-                    style={{background: addedId === product.id ? "#2D6A4F" : "#E63946"}}>
+                    style={{background: addedId === product.id ? "#2D6A4F" : "#C62828"}}>
                     {addedId === product.id ? "✓ נוסף" : "הוסף לסל"}
                   </button>
                 </div>
@@ -150,7 +150,7 @@ export default function ShopPage() {
               </h2>
               <button onClick={() => setShowCart(false)} className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-pp-border transition-colors">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 2L10 10M10 2L2 10" stroke="#1A0806" strokeWidth="1.8" strokeLinecap="round"/>
+                  <path d="M2 2L10 10M10 2L2 10" stroke="#2B2B2B" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
               </button>
             </div>

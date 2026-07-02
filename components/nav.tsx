@@ -16,8 +16,8 @@ function LogoMark() {
   return (
     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
       {/* Badge background */}
-      <circle cx="21" cy="21" r="20" fill="#1A0806" />
-      <circle cx="21" cy="21" r="20" fill="#E63946" fillOpacity="0.92" />
+      <circle cx="21" cy="21" r="20" fill="#2B2B2B" />
+      <circle cx="21" cy="21" r="20" fill="#C62828" fillOpacity="0.92" />
       {/* Pizza wheel outer ring */}
       <circle cx="21" cy="21" r="14" stroke="white" strokeWidth="0.6" fill="none" strokeOpacity="0.25" />
       {/* Filled pizza wedge (top slice) */}
@@ -68,10 +68,10 @@ export function Nav({ setOrderOpen }: NavProps) {
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           borderBottom: scrolled
-            ? "1px solid rgba(230,57,70,0.25)"
+            ? "1px solid rgba(198,40,40,0.25)"
             : "1px solid rgba(240,216,192,0.4)",
           boxShadow: scrolled
-            ? "0 4px 30px rgba(230,57,70,0.06), 0 1px 0 rgba(230,57,70,0.1)"
+            ? "0 4px 30px rgba(198,40,40,0.06), 0 1px 0 rgba(198,40,40,0.1)"
             : "none",
         }}
       >
@@ -105,7 +105,7 @@ export function Nav({ setOrderOpen }: NavProps) {
               >
                 {l.label}
                 {l.badge && (
-                  <span className="absolute -top-2 -right-5 rounded-full px-1.5 py-0.5 text-[9px] font-black tracking-wide text-white uppercase font-bebas" style={{background:"#E63946",lineHeight:1.3}}>
+                  <span className="absolute -top-2 -right-5 rounded-full px-1.5 py-0.5 text-[9px] font-black tracking-wide text-white uppercase font-bebas" style={{background:"#C62828",lineHeight:1.3}}>
                     {l.badge}
                   </span>
                 )}
@@ -159,7 +159,7 @@ export function Nav({ setOrderOpen }: NavProps) {
       <div
         className="fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden"
         style={{
-          background: "linear-gradient(135deg, #E63946, #c42d38)",
+          background: "linear-gradient(135deg, #C62828, #9b1a1a)",
           opacity: mobileOpen ? 1 : 0,
           pointerEvents: mobileOpen ? "all" : "none",
         }}

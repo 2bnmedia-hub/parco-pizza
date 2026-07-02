@@ -18,8 +18,8 @@ const NAV_LINKS = [
 function LogoMarkFooter() {
   return (
     <svg width="32" height="32" viewBox="0 0 42 42" fill="none" aria-hidden="true">
-      <circle cx="21" cy="21" r="20" fill="#1A0806" />
-      <circle cx="21" cy="21" r="20" fill="#E63946" fillOpacity="0.92" />
+      <circle cx="21" cy="21" r="20" fill="#2B2B2B" />
+      <circle cx="21" cy="21" r="20" fill="#C62828" fillOpacity="0.92" />
       <circle cx="21" cy="21" r="14" stroke="white" strokeWidth="0.6" fill="none" strokeOpacity="0.25" />
       <path d="M21 7 L10 29 L32 29 Z" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.4" strokeLinejoin="round" />
       <path d="M9.5 30 Q21 38 32.5 30" stroke="white" strokeWidth="3.2" strokeLinecap="round" fill="none" />
@@ -40,7 +40,7 @@ export function Footer({ setOrderOpen }: FooterProps) {
     <footer className="section-dark-ambient">
 
       {/* Top accent line */}
-      <div className="h-[3px] w-full" style={{background:"linear-gradient(90deg, transparent, #2D6A4F 20%, #E63946 50%, #2D6A4F 80%, transparent)"}} />
+      <div className="h-[3px] w-full" style={{background:"linear-gradient(90deg, transparent, #2E7D32 20%, #C62828 50%, #2E7D32 80%, transparent)"}} />
 
       {/* Main grid */}
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">

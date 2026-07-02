@@ -11,7 +11,7 @@ export function LocationSection() {
     <section
       id="location"
       aria-labelledby="location-heading"
-      style={{ background: "#0F1A14" }}
+      style={{ background: "#1C1C1C" }}
       className="py-16 md:py-20"
     >
       <div className="mx-auto max-w-7xl px-6">
@@ -44,10 +44,10 @@ export function LocationSection() {
 
               {/* Address */}
               <div className="flex items-start gap-3.5">
-                <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(230,57,70,0.15)" }}>
+                <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(198,40,40,0.15)" }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6C3.5 9.5 8 14.5 8 14.5C8 14.5 12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5Z" stroke="#E63946" strokeWidth="1.4" fill="rgba(230,57,70,0.1)"/>
-                    <circle cx="8" cy="6" r="1.8" stroke="#E63946" strokeWidth="1.2"/>
+                    <path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6C3.5 9.5 8 14.5 8 14.5C8 14.5 12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5Z" stroke="#C62828" strokeWidth="1.4" fill="rgba(198,40,40,0.1)"/>
+                    <circle cx="8" cy="6" r="1.8" stroke="#C62828" strokeWidth="1.2"/>
                   </svg>
                 </div>
                 <div>
@@ -61,10 +61,10 @@ export function LocationSection() {
 
               {/* Hours */}
               <div className="flex items-start gap-3.5">
-                <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(230,57,70,0.15)" }}>
+                <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(198,40,40,0.15)" }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <circle cx="8" cy="8" r="5.5" stroke="#E63946" strokeWidth="1.4"/>
-                    <path d="M8 5 V8 L10.5 10" stroke="#E63946" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="8" cy="8" r="5.5" stroke="#C62828" strokeWidth="1.4"/>
+                    <path d="M8 5 V8 L10.5 10" stroke="#C62828" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div className="flex-1">
@@ -86,9 +86,9 @@ export function LocationSection() {
 
               {/* Phone */}
               <div className="flex items-start gap-3.5">
-                <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(230,57,70,0.15)" }}>
+                <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(198,40,40,0.15)" }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M11.5 11v1.5a1 1 0 0 1-1.1 1A9.5 9.5 0 0 1 2.5 5.6 1 1 0 0 1 3.5 4.5H5a1 1 0 0 1 1 .9c.1.5.2 1 .4 1.5a1 1 0 0 1-.2 1L5.6 8.5A8 8 0 0 0 8.5 11.4l.6-.6a1 1 0 0 1 1-.2c.5.2 1 .3 1.5.4A1 1 0 0 1 11.5 11Z" stroke="#E63946" strokeWidth="1.3" fill="rgba(230,57,70,0.1)"/>
+                    <path d="M11.5 11v1.5a1 1 0 0 1-1.1 1A9.5 9.5 0 0 1 2.5 5.6 1 1 0 0 1 3.5 4.5H5a1 1 0 0 1 1 .9c.1.5.2 1 .4 1.5a1 1 0 0 1-.2 1L5.6 8.5A8 8 0 0 0 8.5 11.4l.6-.6a1 1 0 0 1 1-.2c.5.2 1 .3 1.5.4A1 1 0 0 1 11.5 11Z" stroke="#C62828" strokeWidth="1.3" fill="rgba(198,40,40,0.1)"/>
                   </svg>
                 </div>
                 <div>
@@ -164,7 +164,7 @@ export function LocationSection() {
                 rel="noopener noreferrer"
                 aria-label="פתח ב-Google Maps"
                 className="absolute bottom-3 right-3 rounded-xl px-4 py-2 text-xs font-black tracking-widest uppercase text-white shadow-lg transition-opacity hover:opacity-90"
-                style={{ background: "#E63946" }}
+                style={{ background: "#C62828" }}
               >
                 פתח במפות
               </a>

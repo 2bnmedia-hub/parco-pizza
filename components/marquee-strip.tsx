@@ -29,7 +29,7 @@ function Separator({ green }: { green?: boolean }) {
     >
       <path
         d="M8 1L9.96 5.5H15L10.94 8.5L12.47 13L8 10.27L3.53 13L5.06 8.5L1 5.5H6.04L8 1Z"
-        fill={green ? "#D8F3DC" : "white"}
+        fill={green ? "#E8F5E9" : "white"}
       />
     </svg>
   );
@@ -39,11 +39,11 @@ export function MarqueeStrip() {
   const repeated = [...ITEMS, ...ITEMS, ...ITEMS, ...ITEMS];
 
   return (
-    <div className="overflow-hidden" style={{borderBottom: "2px solid #2D6A4F"}}>
+    <div className="overflow-hidden" style={{borderBottom: "2px solid #2E7D32"}}>
       <div
         className="py-4"
         style={{
-          background: "linear-gradient(135deg, #E63946 0%, #c8303c 50%, #E63946 100%)",
+          background: "linear-gradient(135deg, #C62828 0%, #9b1a1a 50%, #C62828 100%)",
           backgroundSize: "200% auto",
           animation: "shimmer 6s linear infinite",
         }}
