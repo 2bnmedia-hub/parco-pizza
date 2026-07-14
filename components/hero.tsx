@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const SLIDES = [
   {
@@ -29,7 +30,6 @@ const SLIDES = [
 export function Hero() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [loaded, setLoaded] = useState<boolean[]>(new Array(SLIDES.length).fill(false));
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % SLIDES.length), []);
   const prev = useCallback(() => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length), []);
@@ -40,8 +40,6 @@ export function Hero() {
     return () => clearInterval(t);
   }, [next, paused]);
 
-  const markLoaded = (i: number) =>
-    setLoaded((prev) => { const n = [...prev]; n[i] = true; return n; });
 
   return (
     <section className="relative h-screen min-h-[600px] overflow-hidden">
@@ -59,7 +57,6 @@ export function Hero() {
             priority={i === 0}
             sizes="100vw"
             className="object-cover"
-            onLoad={() => markLoaded(i)}
           />
         </div>
       ))}
@@ -94,12 +91,12 @@ export function Hero() {
           >
             הזמינו עכשיו
           </a>
-          <a
+          <Link
             href="/#menu"
             className="border border-white/50 px-8 py-3.5 text-xs tracking-[0.3em] text-white uppercase transition-all hover:border-white hover:text-white"
           >
             לתפריט
-          </a>
+          </Link>
         </div>
       </div>
 

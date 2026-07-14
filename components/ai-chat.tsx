@@ -157,6 +157,7 @@ export function AiChat() {
   /* ── Drag state ─────────────────────────────────────────── */
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
   const isDragging = useRef(false);
+  const [draggingCursor, setDraggingCursor] = useState(false);
   const dragOffset = useRef({ ox: 0, oy: 0 });
 
   const startDrag = useCallback((e: React.MouseEvent | React.TouchEvent) => {
@@ -168,6 +169,7 @@ export function AiChat() {
     const rect = panel.getBoundingClientRect();
     dragOffset.current = { ox: clientX - rect.left, oy: clientY - rect.top };
     isDragging.current = true;
+    setDraggingCursor(true);
     /* snapshot current position so we switch from bottom/left CSS to top/left px */
     setPos({ x: rect.left, y: rect.top });
   }, []);
@@ -186,7 +188,7 @@ export function AiChat() {
       const clampedY = Math.max(0, Math.min(window.innerHeight - ph, rawY));
       setPos({ x: clampedX, y: clampedY });
     };
-    const onUp = () => { isDragging.current = false; };
+    const onUp = () => { isDragging.current = false; setDraggingCursor(false); };
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseup", onUp);
     document.addEventListener("touchmove", onMove, { passive: false });
@@ -422,7 +424,7 @@ export function AiChat() {
             className="flex items-center gap-3 px-4 py-3.5 text-white shrink-0 rounded-t-3xl select-none"
             style={{
               background: "linear-gradient(135deg, #2E7D32, #1b5e20)",
-              cursor: isDragging.current ? "grabbing" : "grab",
+              cursor: draggingCursor ? "grabbing" : "grab",
             }}
             aria-label="גרור להזזת הצ'אט"
           >

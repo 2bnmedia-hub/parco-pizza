@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
@@ -49,17 +49,18 @@ function ProgressBar({ current, min, max, color }: {current:number;min:number;ma
 }
 
 export default function LoyaltyPage() {
-  const [member, setMember] = useState<Member | null>(null);
+  const [member, setMember] = useState<Member | null>(() => {
+    if (typeof window === "undefined") return null;
+    try {
+      const stored = localStorage.getItem("parco_member");
+      return stored ? (JSON.parse(stored) as Member) : null;
+    } catch { return null; }
+  });
   const [tab, setTab] = useState<"home"|"rewards"|"history">("home");
   const [form, setForm] = useState({ firstName:"", email:"", phone:"" });
   const [submitting, setSubmitting] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [redeemed, setRedeemed] = useState<string[]>([]);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("parco_member");
-    if (stored) setMember(JSON.parse(stored));
-  }, []);
 
   const currentTier = TIERS.find(t => (member?.points ?? 0) >= t.min && (member?.points ?? 0) <= t.max) ?? TIERS[0]!;
   const nextTier = TIERS[TIERS.indexOf(currentTier) + 1];

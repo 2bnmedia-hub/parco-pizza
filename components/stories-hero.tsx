@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const BASE = "https://parco-pizza.co.il/wp-content/uploads/sites/249/2026/05/";
 
@@ -174,12 +175,12 @@ export function StoriesHero({ setOrderOpen }: StoriesHeroProps) {
           >
             הזמינו עכשיו
           </button>
-          <a
+          <Link
             href="/#menu"
             className="btn-outline-white px-7 py-4 text-sm tracking-widest uppercase"
           >
             לתפריט
-          </a>
+          </Link>
         </div>
       </div>
 

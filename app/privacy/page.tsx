@@ -63,7 +63,7 @@ export default function PrivacyPage() {
                 ))}
               </ul>
               <p>
-                אנו <strong className="text-brand-cream">אינם</strong> אוספים שמות, כתובות דוא"ל
+                אנו <strong className="text-brand-cream">אינם</strong> אוספים שמות, כתובות דוא&quot;ל
                 או פרטים אישיים מזהים ישירות דרך אתר זה, אלא אם בחרת ליצור עמנו קשר.
               </p>
             </Section>
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
                 הכלי אוסף מידע אנונימי על אופן השימוש באתר ועוזר לנו לשפר את התוכן והחוויה.
               </p>
               <p>
-                Google עשויה להעביר מידע לשרתים בארה"ב ובמדינות אחרות.
+                Google עשויה להעביר מידע לשרתים בארה&quot;ב ובמדינות אחרות.
                 למידע נוסף:{" "}
                 <a
                   href="https://policies.google.com/privacy"

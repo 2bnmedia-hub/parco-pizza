@@ -36,17 +36,17 @@ function applyState(s: A11yState) {
 
 export function AccessibilityWidget() {
   const [open, setOpen] = useState(false);
-  const [state, setState] = useState<A11yState>(DEFAULTS);
-
-  useEffect(() => {
+  const [state, setState] = useState<A11yState>(() => {
+    if (typeof window === "undefined") return DEFAULTS;
     try {
       const saved = localStorage.getItem("a11y");
-      if (saved) {
-        const parsed = JSON.parse(saved) as A11yState;
-        setState(parsed);
-        applyState(parsed);
-      }
-    } catch {}
+      return saved ? (JSON.parse(saved) as A11yState) : DEFAULTS;
+    } catch { return DEFAULTS; }
+  });
+
+  useEffect(() => {
+    applyState(state);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const update = useCallback((patch: Partial<A11yState>) => {

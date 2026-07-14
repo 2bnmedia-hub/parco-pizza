@@ -2,19 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ScrollReveal } from "./scroll-reveal";
 
-function IconPizza() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-pp-red">
-      <path d="M16 3 L28 26 H4 Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-      <circle cx="16" cy="16" r="2" fill="currentColor" />
-      <circle cx="11" cy="20" r="1.5" fill="currentColor" opacity="0.7" />
-      <circle cx="21" cy="20" r="1.5" fill="currentColor" opacity="0.7" />
-      <path d="M7 22 Q16 29 25 22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-    </svg>
-  );
-}
 
 function IconStar() {
   return (
@@ -104,13 +94,6 @@ function AnimatedCounter({ value, suffix, decimal = false }: { value: number; su
   );
 }
 
-function TagIcon({ children }: { children: React.ReactNode }) {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-pp-red" aria-hidden="true">
-      {children}
-    </svg>
-  );
-}
 
 export function AboutSection() {
   return (
@@ -258,7 +241,7 @@ export function AboutSection() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <a
+              <Link
                 href="/#location"
                 className="inline-flex items-center gap-3 rounded-full border-2 border-pp-dark text-pp-dark px-8 py-3.5 text-sm font-black tracking-widest uppercase transition-all hover:bg-pp-dark hover:text-white"
               >
@@ -266,7 +249,7 @@ export function AboutSection() {
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
             </ScrollReveal>
           </div>
 
